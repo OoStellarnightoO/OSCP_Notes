@@ -41,11 +41,17 @@ cd pimpmykali
 sudo ./pimpmykali.sh
 ```
 
+nxc needs to be initialised upon first use so just run the below command
+
+```bash
+nxc smb 127.0.0.1 -u '' -p ''
+```
+
 ### Installing Other Tools
 
 **Feroxbuster**
 
-A directory busting tool that does recursive busting. Useful tool to have in addition to Gobuster. Also used in Tiberius's famous AutoRecon (though I did not use AutoRecon for OSCP)
+A directory busting tool that does recursive busting. Useful tool to have in addition to Gobuster. Also used in Tiberius's famous AutoRecon (though I did not use AutoRecon for OSCP). More details on usage in the HTTP Enumeration .md file
 
 ```bash
 sudo apt install feroxbuster
@@ -53,16 +59,18 @@ sudo apt install feroxbuster
 
 **Sublime Text**
 
-I love this text editor. I am not haxor enough to use vim or nano to their full potential. Sublime Text is a noob friendly way to edit text which you will be doing a lot of from things like adding usernames to looking at exploit code. You can easily replace all whitespaces with the find and replace function and there are multiple plugins. 
+I love this text editor. I am not haxor enough to use vim or nano to their full potential. Sublime Text is a noob friendly way to edit text which you will be doing a lot of from things like processing domain usernames from a nxc smb --users dump to looking at exploit code. You can easily replace all whitespaces with the find and replace function and there are multiple plugins. 
 
 ```bash
+wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/sublimehq-archive.gpg > /dev/null
+echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+sudo apt-get update
 sudo apt-get install sublime-text
+
 # after installing
+
 subl # to open sublime text
 ```
-
-
-
 
 **rlwrap**
 
@@ -75,4 +83,23 @@ sudo apt -y install rlwrap
 # Usage
 
 rlwrap nc -lvnp 4444
+```
+
+**Keepass**
+
+Application to open keepass database files (.kdbx). You will encounter such files when doing your OSCP challenge labs so best to get it ready.
+
+```bash
+sudo apt install keepassxc
+```
+
+**snmp-mibs-downloader**
+
+Crucial when confronting SNMP UDP port. I will explain more in the Service Enumeration part. For now, just install it.
+For more reading, refer to this: https://book.hacktricks.wiki/en/network-services-pentesting/pentesting-snmp/index.html#enumerating-snmp
+
+```bash
+sudo apt-get install snmp-mibs-downloader
+sudo download-mibs
+sudo nano /etc/snmp/snmp.conf # comment out mibs
 ```
