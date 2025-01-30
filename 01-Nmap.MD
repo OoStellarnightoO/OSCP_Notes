@@ -27,5 +27,14 @@ UDP scan need to be run with Sudo
 I only use the -top-ports flag as UDP scan is connectionless and will TAKE FOREVER if you scan everything. 50 ports are good enough
 
 ```bash
-sudo nmap -sU -top-ports=50 -A -Pn -v --open <target ip>
+sudo nmap -sU -top-ports=50 -A -Pn -v --open <target ip> --reasons
+```
+
+If you run into an odd service that when connected to pumps out strange strings, try piping the output and then running the file command
+
+```bash
+
+nc <ip> <strange port> > test.txt
+
+file test.txt 
 ```
