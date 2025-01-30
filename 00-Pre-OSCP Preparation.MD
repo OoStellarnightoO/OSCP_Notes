@@ -227,7 +227,9 @@ Download the latest versions of the binaries from https://github.com/jpillora/ch
 you want the 
 
 chisel_version_linux_amd64.deb  for linux,  
+
 chisel_version_linux_amd64.deb for Windows 64bit and  
+
 chisel_version_windows_386.gz for Windows 32bit
 
 These should work out of the box. I discuss more how to use this in the pivoting notes.
@@ -239,7 +241,9 @@ Download the latest versions of the binaries from https://github.com/nicocha30/l
 you want the 
 
 ligolo-ng_agent_version_linux_amd64.tar.gz (Agent for Linux box)
+
 ligolo-ng_agent_version_windows_amd64.zip  (Agent for Windows box)
+
 ligolo-ng_proxy_version_linux_amd64.tar.gz  (Proxy that you run on Kali)
 
 ## LinuxEnum
@@ -247,8 +251,11 @@ ligolo-ng_proxy_version_linux_amd64.tar.gz  (Proxy that you run on Kali)
 You want the following Linux Enumeration scripts:
 
 lse.sh > https://github.com/diego-treitos/linux-smart-enumeration
+
 linpeas.sh > https://github.com/peass-ng/PEASS-ng/releases/ 
+
 pspy32 > https://github.com/DominicBreuker/pspy/releases/tag/v1.2.1
+
 pspy64 > https://github.com/DominicBreuker/pspy/releases/tag/v1.2.1
 
 ## LinuxPE
@@ -316,10 +323,13 @@ cp /usr/share/webshells/php/php-reverse-shell.php monkey.php # this is the pente
 ```
 Please get the following shells as well as these are really useful when the above dont work:
 
-https://github.com/ivan-sincek/php-reverse-shell/blob/master/src/reverse/php_reverse_shell.php
-https://github.com/WhiteWinterWolf/wwwolf-php-webshell
-https://github.com/borjmz/aspx-reverse-shell/blob/master/shell.aspx
-https://github.com/carlospolop/phpwebshelllimited 
+https://github.com/ivan-sincek/php-reverse-shell/blob/master/src/reverse/php_reverse_shell.php - this is more reliable than pentest monkey IMO
+
+https://github.com/WhiteWinterWolf/wwwolf-php-webshell - the superior simple backdoor
+
+https://github.com/borjmz/aspx-reverse-shell/blob/master/shell.aspx 
+
+https://github.com/carlospolop/phpwebshelllimited - use this if all your other php webshell refuse to execute commands
 
 ## WinEnum
 
@@ -335,6 +345,7 @@ cp /usr/share/windows-binaries/nc.exe nc.exe
 ```
 
 Grab PrintSpoofer32 and PrintSpoofer64 from https://github.com/itm4n/PrintSpoofer/releases/tag/v1.0
+
 Grab SigmaPotatoCore and SigmaPotato from https://github.com/tylerdotrar/SigmaPotato/releases/tag/v1.2.6
 
 -------------
