@@ -139,12 +139,44 @@ Once you are in the GUI portal, download the SharpHound package from the Downloa
 
 ![alt text](/Assets/sharphound_collector.png)
 
-**<span style="color: red;">Terminator**
+**Terminator**
 
-So awesome that I need to turn it <span style="color: red;">RED</span>. I mean check this out:
+I mean check this out:
 
 ![alt text](/Assets/terminator.gif) 
 
 Bascially you can name your terminal windows and tabs AND save it as a custom layout that you can spawn with a shortcut. 
 
 I have two tabs dedicated to scanning and attacking and a final tab for all my tools.
+
+I have a separate .md page on how to customise it >>
+
+But basically create a folder for all your tooling and then create a tab when spawned, points you directly to your tool folder.
+
+**Git-dumper**
+
+Dumps .git files for you. Good when you discover a .git repo on a HTTP/HTTPS website
+
+https://github.com/arthaud/git-dumper
+
+```bash
+pipx install git-dumper
+```
+
+-----------------------------------
+# Tools
+
+Now that you downloaded all the good stuff up there, time to set up your tools folder.
+
+I created a folder for OSCP and then another folder for Tools. Inside the Tools folder, I further break it down to various categories. Feel free to follow along:
+
+```bash
+# on my current working directory which is /home/kali/Desktop
+
+mkdir OSCP Tools
+
+cd Tools
+
+mkdir AD_Enum AD_Attack LinuxEnum LinuxPE WinEnum WinPE Mimikatz WebShells Venom Others
+
+```
