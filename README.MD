@@ -39,15 +39,19 @@ I placed links below for easier navigation:
 
 5) [Pivoting]
 
-6) [Windows PrivEsc]
+6) [Windows Host Enumeration]
 
-7) [Linux PrivEsc]
+7) [Linux Host Enumeration]
 
-6) [Cracking Passwords]
+8) [Windows PrivEsc]
 
-7) [Active Directory Enum, Lateral Movement and PrivEsc]
+9) [Linux PrivEsc]
 
-8) [Other Random Stuff]
+10) [Cracking Passwords]
+
+11) [Active Directory Enum, Lateral Movement and PrivEsc]
+
+12) [Other Random Stuff]
 
 
 ## Other Awesome Resources!
@@ -55,3 +59,7 @@ I placed links below for easier navigation:
 1) This is your best friend in the exam > (https://book.hacktricks.wiki/en/index.html)
 
 2) Reverse Shell Generator > (https://www.revshells.com/)
+
+3) LainKusanagi's List of Boxes to do for OSCP > (https://docs.google.com/spreadsheets/d/18weuz_Eeynr6sXFQ87Cd5F0slOj9Z6rt/edit?gid=487240997#gid=487240997)
+
+4) TJNull's List of Boxes to do for OSCP > (https://docs.google.com/spreadsheets/u/1/d/1dwSMIAPIam0PuRBkCiDI88pU3yzrqqHkDtBngUHNCw8/htmlview)
