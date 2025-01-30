@@ -21,6 +21,54 @@ Did cyber things day in day out, learn about Blue and Red Team stuff on TCM Acad
 
 I only got 70 points for OSCP+ though so I am sure you can do better than me!
 
+## Am I ready for the test?
+
+This seems like a perpetual question on the Offsec subreddit and no doubt on every test taker's mind. I myself had doubts about my readiness prior to the test.
+
+Let me share my own experience so that perhaps in some manner, you could relate to it.
+
+I was basically given full time off for about six weeks from my work to prepare for the OSCP. This was my rough schedule:
+
+<u>Timeline</u>
+
+**Last week of November 2024:** Activated my three month PEN-200 access
+
+**1st Week of December 2024:** Went on one week holiday (haha)
+
+**Rest of December:** Drill PEN-200 materials. I did not complete the whole module. I left AV-Evasion, and the AWS mods untouched as these are not within the scope of OSCP+ as of January 2025. Subscribed to one month PG on 29 December 2024
+
+**1st Week of January 2025**: Completed Secura, Relia, Medtech, OSCP A/B/C. Started doing PG boxes from Lain's list
+
+Started Full time work here
+
+**2nd Week of January 2025**: Completed most of Skylark. Half of Lain's recommended PG boxes
+
+**3rd Week of Janurary 2025**: Compelted all Lain's boxes. Redid OSCP A/B/C
+
+<u> FAQ </u>
+
+**Q:** Was I a uber wizard that did not need to see hints, walkthroughs or seek help from OffSec Discord?
+
+**A:** No! In fact I struggled greatly when doing Medtech, Relia and OSCP A and B. My methodology wasn't well established and I was poor with manual eumeration. So rather than get stuck and "TRYING HARDER"🤮, I checked for hints to move forward. In fact, I had to check the hints so many times that I wonder whether I will ever make it out of Challenge Labs.
+
+As I reached OSCP C, I realised the frequency of hints I checked dropped dramatically. I was able to solve most of the boxes without hints. But of course the hint seeking came back when doing the PG boxes but as I did more, I started to be able to solve Medium boxes without hints and hard/very hard boxes with some hints here and there.
+
+As you do more boxes, you start to intuitively understand how OSCP design its boxes and you start to shape your methodology towards it.
+
+The key takeaway here is to take the hints, update your methodology and notes. If you run into a similar situation, you want to be in a state where you don't need the hints anymore because it is in your notes and you understand the problem at heart. **So it is fine to resort to hints and walkthroughs as long as you learn and NOTE the tool, method and the thinking behind it! Also do more boxes if you can**
+
+**Q:** What Challenge Labs should I be doing?
+
+**A:** Minimally OSCP A/B/C. If you have the time, do Secura, Relia, Medtech and maybe parts of Skylark. OSCP A/B/C somewhat resembles the actual exam though with the assumed breach scenario, the AD set is not entire accurate but you get a good sense of the exam. Zeus and Posiedon are generally thought of as out of scope for the exam.
+
+**Q:** Lain or TJNull?
+
+**A:** Why not both? Instead of trying to "optimise", just do boxes with emphasis on completing the PEN-200 Challenge labs first before doing the PG Practice and Play boxes recommended in both lists. I strongly recommend doing the "Administrator" box from HTB as it is a assumed breach scenario and allows you to practice ACL abuse.  **For me what worked was the sheer amount of boxes I have done over the past month. So much so that I can quickly identify an attack vector when scanning and enumerating**
+
+**Q:** How do you notetake?
+
+**A:**Different strokes for different people but I love Obsidian because of its community plugins. I sync my notes using Google Cloud (you could pay for Obsidian Sync if you want) and I used the Templater plugin to instantly plant my enumeration template when i note take for a box.
+
 ## 📚How to use this guide
 
 Everything is in .md so you can just download them or clone them and you can use it in obsidian or notion. Feel free to modify for your own needs!
