@@ -8,7 +8,31 @@ So the day before my OSCP, I prepared a completely fresh Kali VM. This is how I 
 
 Feel free to modify to your own needs. I also added some videos that I thought were useful.
 
+-------------------------------------------------------------
+
 ## Steps
 
 Now you have installed your Kali. What's next?
+
+First of all, I would like to introduce this wonderful script by Dewalt that would help install 95% of the tools you need for OSCP:
+
+This includes things like nxc, seclists (i am surprised that this does not come native with kali), enum4linux-ng etc
+
+https://github.com/Dewalt-arch/pimpmykali
+
+Do this first.
+
+```bash
+# Remove existing pimpmykali folder
+rm -rf pimpmykali/
+
+# Clone pimpmykali repository & enter the folder
+git clone https://github.com/Dewalt-arch/pimpmykali
+
+cd pimpmykali
+
+# Execute the script - For a new Kali VM, run menu option 'N'
+# (The script must be run with root privileges)
+sudo ./pimpmykali.sh
+```
 
