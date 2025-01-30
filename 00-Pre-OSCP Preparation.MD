@@ -199,6 +199,66 @@ mkdir OSCP Tools
 
 cd Tools
 
-mkdir AD_Enum AD_Attack LinuxEnum LinuxPE WinEnum WinPE Mimikatz WebShells Venom Others
+mkdir AD_Enum AD_Attack Chisel Ligolo LinuxEnum LinuxPE WinEnum WinPE Mimikatz WebShells Venom Others
 
 ```
+
+## AD_Attack
+
+I dont think the attacks for these tools are in scope for OSCP but I downloaded them when I was doing the Certified Box from HTB so hey no harm to have them here
+
+https://github.com/micahvandeusen/gMSADumper
+
+https://github.com/ShutdownRepo/targetedKerberoast/tree/main
+
+## AD_Enum
+
+Dump the SharpHound tools that you downloaded from BloodhoundCE here
+
+## Chisel
+
+Download the latest versions of the binaries from https://github.com/jpillora/chisel/releases
+
+you want the 
+
+chisel_version_linux_amd64.deb  for linux,  
+chisel_version_linux_amd64.deb for Windows 64bit and  
+chisel_version_windows_386.gz for Windows 32bit
+
+These should work out of the box. I discuss more how to use this in the pivoting notes.
+
+## Ligolo
+
+Download the latest versions of the binaries from https://github.com/nicocha30/ligolo-ng/releases/
+
+you want the 
+
+ligolo-ng_agent_version_linux_amd64.tar.gz (Agent for Linux box)
+ligolo-ng_agent_version_windows_amd64.zip  (Agent for Windows box)
+ligolo-ng_proxy_version_linux_amd64.tar.gz  (Proxy that you run on Kali)
+
+## LinuxEnum
+
+You want the following Linux Enumeration scripts:
+
+lse.sh > https://github.com/diego-treitos/linux-smart-enumeration
+linpeas.sh > https://github.com/peass-ng/PEASS-ng/releases/ 
+pspy32 > https://github.com/DominicBreuker/pspy/releases/tag/v1.2.1
+pspy64 > https://github.com/DominicBreuker/pspy/releases/tag/v1.2.1
+
+## LinuxPE
+
+These are common kernel exploits for PE. Might as well compile them ahead of time
+
+```bash
+
+mkdir DirtyPipe PwnKit
+
+```
+
+
+
+
+
+
+

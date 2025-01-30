@@ -35,7 +35,7 @@ I was basically given full time off for about six weeks from my work to prepare 
 
 **1st Week of December 2024:** Went on one week holiday (haha)
 
-**Rest of December:** Drill PEN-200 materials. I did not complete the whole module. I left AV-Evasion, and the AWS mods untouched as these are not within the scope of OSCP+ as of January 2025. Subscribed to one month PG on 29 December 2024
+**Rest of December:** Drill PEN-200 materials. I did not complete the whole module. I left AV-Evasion, and the AWS mods untouched as these were not within the scope of OSCP+ as of January 2025. Subscribed to one month PG on 29 December 2024.
 
 **1st Week of January 2025**: Completed Secura, Relia, Medtech, OSCP A/B/C. Started doing PG boxes from Lain's list
 
@@ -59,7 +59,7 @@ The key takeaway here is to take the hints, update your methodology and notes. I
 
 **Q:** What Challenge Labs should I be doing?
 
-**A:** Minimally OSCP A/B/C. If you have the time, do Secura, Relia, Medtech and maybe parts of Skylark. OSCP A/B/C somewhat resembles the actual exam though with the assumed breach scenario, the AD set is not entire accurate but you get a good sense of the exam. Zeus and Posiedon are generally thought of as out of scope for the exam.
+**A:** Minimally OSCP A/B/C. If you have the time, do Secura, Relia, Medtech and maybe parts of Skylark. OSCP A/B/C somewhat resembles the actual exam though with the assumed breach scenario, the AD set is not entirely accurate but you get a good sense of the exam. Zeus and Posiedon are generally thought of as out of scope for the exam.
 
 **Q:** Lain or TJNull?
 
@@ -67,7 +67,7 @@ The key takeaway here is to take the hints, update your methodology and notes. I
 
 **Q:** How do you notetake?
 
-**A:**Different strokes for different people but I love Obsidian because of its community plugins. I sync my notes using Google Cloud (you could pay for Obsidian Sync if you want) and I used the Templater plugin to instantly plant my enumeration template when i note take for a box.
+**A:** Different strokes for different people but I love Obsidian because of its community plugins. I sync my notes using Google Cloud (you could pay for Obsidian Sync if you want) and I used the Templater plugin to instantly plant my enumeration template when i note take for a box.
 
 ## 📚How to use this guide
 
