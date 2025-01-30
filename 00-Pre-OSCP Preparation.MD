@@ -163,6 +163,28 @@ https://github.com/arthaud/git-dumper
 pipx install git-dumper
 ```
 
+## Some tools that I heard are cool but I didn't use it
+
+**AutoRecon**
+
+Basically automates a whole bunch of enumeration for you. I am a fan of doing it my own so I didnt use this. I heard great things about this though.
+
+https://github.com/Tib3rius/AutoRecon
+
+**Penelope**
+
+A Netcat on steroids. Upgrades your shell for you and allow you to background it. Looks really colorful as well. Also seem to be able to function as a pseudo C2.
+Unfortunately it kinda screwed my original kali due to some dependencies issues so you might want to take virtual image before trying this so that you can always revert.
+
+https://github.com/brightio/penelope
+
+**OSCP-TunnelMonitor**
+
+The OSCP Exam (and Lab) environment has a reputation for being unstable and finciky so someone on Reddit wrote a script to basically ping and try to establish a TCP connect to a port of choice and will notify you if the connection drops.
+
+https://github.com/captain118/OSCP-TunnelMonitor
+
+
 -----------------------------------
 # Tools
 
