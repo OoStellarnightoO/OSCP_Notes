@@ -57,6 +57,14 @@ A directory busting tool that does recursive busting. Useful tool to have in add
 sudo apt install feroxbuster
 ```
 
+**xfreerdp**
+
+I am not sure why this is not in pimpmykali but this is personally an essential tool for RDP access into windows boxes. I find it more stable than rdesktop and remmina. Refer to the Service Enumeration .md file for more info on how to xfreerdp to its fullest potential!
+
+```bash
+sudo apt install freerdp2-x11
+```
+
 **Sublime Text**
 
 I love this text editor. I am not haxor enough to use vim or nano to their full potential. Sublime Text is a noob friendly way to edit text which you will be doing a lot of from things like processing domain usernames from a nxc smb --users dump to looking at exploit code. You can easily replace all whitespaces with the find and replace function and there are multiple plugins. 
@@ -103,3 +111,31 @@ sudo apt-get install snmp-mibs-downloader
 sudo download-mibs
 sudo nano /etc/snmp/snmp.conf # comment out mibs
 ```
+
+**Bloodhound CE**
+
+I am more used to Bloodhound CE instead of the traditional Bloodhound so it is up to you if you want to do this. I believe that traditional Bloodhound is no longer supported so might as well get used to using CE. 
+
+The github page can be found here: https://github.com/SpecterOps/BloodHound
+
+I found the following guide to be straightforward in assisting the install process. PimpMyKali should have installed docker-compose
+
+https://blog.spookysec.net/Deploying-BHCE/ 
+
+```bash
+sudo git clone https://github.com/SpecterOps/BloodHound.git /opt/BloodHound
+cd /opt/Bloodhound
+sudo cp ./examples/docker-compose/* ./
+
+# to set it up
+
+sudo docker-compose up
+
+# note the password upon first set up of Bloodhound CE as you need that to login to the admin portal on localhost:8080. You can change the password after that
+
+```
+
+Once you are in the GUI portal, download the SharpHound package 
+
+![alt text](Assets\images\sharphound_collector.png)
+
