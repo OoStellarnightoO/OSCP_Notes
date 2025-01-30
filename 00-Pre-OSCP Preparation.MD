@@ -153,6 +153,11 @@ I have a separate .md page on how to customise it >>
 
 But basically create a folder for all your tooling and then create a tab when spawned, points you directly to your tool folder.
 
+```bash
+sudo add-apt-repository ppa:mattrose/terminator
+sudo apt install terminator
+```
+
 **Git-dumper**
 
 Dumps .git files for you. Good when you discover a .git repo on a HTTP/HTTPS website
@@ -254,10 +259,91 @@ These are common kernel exploits for PE. Might as well compile them ahead of tim
 
 mkdir DirtyPipe PwnKit
 
+cd DirtyPipe;mkdir Arinerron Alexis
+
+cd Arinerron
+
+# grab exploit.c from https://github.com/Arinerron/CVE-2022-0847-DirtyPipe-Exploit
+
+cd ../Alexis
+
+# grab both exploit-1.c and exploit-2.c from https://github.com/AlexisAhmed/CVE-2022-0847-DirtyPipe-Exploits
+
+cd ../../PwnKit
+
+# grab PwnKit from https://github.com/ly4k/PwnKit
+```
+## Mimikatz
+
+Grab mimikatz_trunk.zip from https://github.com/gentilkiwi/mimikatz/releases/tag/2.2.0-20220919 and unzip them in this Mimikatz folder
+
+## Others
+
+This is a folder for some of the stuff that I have come across such as Redis
+
+```bash
+cd Others
+
+mkdir Jdwp Redis;cd Jdwp
+# download jdwp-shellifer.py from https://github.com/IOActive/jdwp-shellifier
+
+cd ../Redis
+
+mkdir Redis-RCE RogueServer;cd Redis-RCE
+
+# download redis-rce.py from https://github.com/Ridter/redis-rce 
+# get exp.so from https://github.com/n0b0dyCN/redis-rogue-server/blob/master/exp.so
+
+cd ../RogueServer
+
+# download redis-rogue-server.py and exp.so from https://github.com/n0b0dyCN/redis-rogue-server
+
 ```
 
+## Venom
 
+Just a folder for me to store my msfvenom payloads
 
+## WebShells
+
+Get the following webshells (some already exist in kali so just cp them over here for easier retrieval)
+
+```bash
+
+cp /usr/share/webshells/aspx/cmdasp.aspx cmdasp.aspx
+cp /usr/share/webshells/php/simple-backdoor.php simple-backdoor.php
+cp /usr/share/webshells/php/php-reverse-shell.php monkey.php # this is the pentest monkey webshell
+```
+Please get the following shells as well as these are really useful when the above dont work:
+
+https://github.com/ivan-sincek/php-reverse-shell/blob/master/src/reverse/php_reverse_shell.php
+https://github.com/WhiteWinterWolf/wwwolf-php-webshell
+https://github.com/borjmz/aspx-reverse-shell/blob/master/shell.aspx
+https://github.com/carlospolop/phpwebshelllimited 
+
+## WinEnum
+
+Grab winPEASany, winPEAS.bat and the x64 and x86 of Winpeas from https://github.com/peass-ng/PEASS-ng/releases/
+
+## WinPE
+
+```bash
+cd WinPE
+
+cp /usr/share/windows-binaries/nc.exe nc.exe
+
+```
+
+Grab PrintSpoofer32 and PrintSpoofer64 from https://github.com/itm4n/PrintSpoofer/releases/tag/v1.0
+Grab SigmaPotatoCore and SigmaPotato from https://github.com/tylerdotrar/SigmaPotato/releases/tag/v1.2.6
+
+-------------
+
+# Great Work!
+
+Now take a snapshot of the VM so that you can always revert back to this set!
+
+![alt text](/Assets/snapshot_image.png)
 
 
 
