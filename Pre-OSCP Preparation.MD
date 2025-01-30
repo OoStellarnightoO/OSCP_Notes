@@ -22,6 +22,8 @@ https://github.com/Dewalt-arch/pimpmykali
 
 Do this first.
 
+_That aside, _
+
 ```bash
 # Remove existing pimpmykali folder
 rm -rf pimpmykali/
