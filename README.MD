@@ -79,7 +79,7 @@ I placed links below for easier navigation:
 
 1) [Preparing for the Exam] (https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/00-Pre-OSCP%20Preparation.MD)
 
-2) [How to Nmap]
+2) [How to Nmap] ()
 
 3) [Service Enumeration and What to do]
 
