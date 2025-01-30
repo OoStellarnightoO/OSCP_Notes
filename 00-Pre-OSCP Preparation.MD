@@ -137,5 +137,5 @@ sudo docker-compose up
 
 Once you are in the GUI portal, download the SharpHound package 
 
-![alt text](Assets\images\sharphound_collector.png)
+![alt text](/Assets/sharphound_collector.png)
 
