@@ -51,7 +51,7 @@ A directory busting tool that does recursive busting. Useful tool to have in add
 sudo apt install feroxbuster
 ```
 
-**Sublime Test**
+**Sublime Text**
 
 I love this text editor. I am not haxor enough to use vim or nano to their full potential. Sublime Text is a noob friendly way to edit text which you will be doing a lot of from things like adding usernames to looking at exploit code. You can easily replace all whitespaces with the find and replace function and there are multiple plugins. 
 
@@ -60,6 +60,10 @@ sudo apt-get install sublime-text
 # after installing
 subl # to open sublime text
 ```
+
+
+
+
 **rlwrap**
 
 Don't you hate it when your nc reverse shell cant access previous commands by pressing up or you cant edit your commands by pressing left?
