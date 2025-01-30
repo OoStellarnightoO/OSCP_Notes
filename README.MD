@@ -15,9 +15,16 @@ I decided to do some online research to find out more (skipping the part where I
 
 I failed my first PNPT in October 2022 and deservedly so because I did not even know what is the difference between an external and an internal network. My basics were really weak. I thought perhaps I was not fated for this and i put my cyber stuff on hiatus as my busy worklife took over my free time.
 
-In December 2023, I decided to approach PNPT with a fresh perspective, redid all the courses and boom I completed the exam in 1.5 days and was then certified on 26 December 2023. Perhaps I can thrive in this field. Did a career transition in mid 2024 to join a cybersecurity transition programme.
+In December 2023, I decided to approach PNPT with a fresh perspective, redid all the courses and boom I completed the exam in 1.5 days and was then certified on 26 December 2023. Perhaps I can thrive in this field. Did a career transition in mid 2024 to join a cybersecurity transition programme to *git gud*.
 
 Did cyber things day in day out, learn about Blue and Red Team stuff on TCM Academy, THM and HTB. Got my GCIH in November 2024 and now OSCP+ in Jan 2025.
 
 I only got 70 points for OSCP+ though so I am sure you can do better than me!
 
+## 📚How to use this guide
+
+Everything is in .md so you can just download them or clone them and you can use it in obsidian or notion. Feel free to modify for your own needs!
+
+I placed links below for easier navigation:
+
+1) [Preparing for the Exam] (https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/00-Pre-OSCP%20Preparation.MD)
