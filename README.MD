@@ -25,8 +25,33 @@ I only got 70 points for OSCP+ though so I am sure you can do better than me!
 
 Everything is in .md so you can just download them or clone them and you can use it in obsidian or notion. Feel free to modify for your own needs!
 
+I will personally start with preparing the environment!
+
 I placed links below for easier navigation:
 
-1) [PreparingfortheExam] (https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/00-Pre-OSCP%20Preparation.MD)
+1) [Preparing for the Exam] (https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/00-Pre-OSCP%20Preparation.MD)
 
-2) [NmapScans]
+2) [How to Nmap]
+
+3) [Service Enumeration and What to do]
+
+4) [Dealing with Web Services]
+
+5) [Pivoting]
+
+6) [Windows PrivEsc]
+
+7) [Linux PrivEsc]
+
+6) [Cracking Passwords]
+
+7) [Active Directory Enum, Lateral Movement and PrivEsc]
+
+8) [Other Random Stuff]
+
+
+## Other Awesome Resources!
+
+1) This is your best friend in the exam > (https://book.hacktricks.wiki/en/index.html)
+
+2) Reverse Shell Generator > (https://www.revshells.com/)
