@@ -60,6 +60,9 @@ I placed links below for easier navigation:
 
 2) Reverse Shell Generator > (https://www.revshells.com/)
 
+3) **Offsec's S1ren**> (https://www.youtube.com/watch?v=h1Br5umYxwc)
+Special Mention for S1ren. I like her methodology and have adopted her way of approaching a box. Please give her a watch and understand the methodology she is using.
+
 3) LainKusanagi's List of Boxes to do for OSCP > (https://docs.google.com/spreadsheets/d/18weuz_Eeynr6sXFQ87Cd5F0slOj9Z6rt/edit?gid=487240997#gid=487240997)
 
 4) TJNull's List of Boxes to do for OSCP > (https://docs.google.com/spreadsheets/u/1/d/1dwSMIAPIam0PuRBkCiDI88pU3yzrqqHkDtBngUHNCw8/htmlview)
