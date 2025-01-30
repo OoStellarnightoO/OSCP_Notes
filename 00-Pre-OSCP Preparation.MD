@@ -135,7 +135,16 @@ sudo docker-compose up
 
 ```
 
-Once you are in the GUI portal, download the SharpHound package 
+Once you are in the GUI portal, download the SharpHound package from the Download Collectors link. Unzip it. 
 
 ![alt text](/Assets/sharphound_collector.png)
 
+**<span style="color: red;">Terminator**
+
+So awesome that I need to turn it <span style="color: red;">RED</span>. I mean check this out:
+
+![alt text](/Assets/terminator.gif) 
+
+Bascially you can name your terminal windows and tabs AND save it as a custom layout that you can spawn with a shortcut. 
+
+I have two tabs dedicated to scanning and attacking and a final tab for all my tools.
