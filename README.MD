@@ -1,7 +1,7 @@
 # ✨Welcome to my OSCP Tips and Tricks!✨
 
 I believe in sharing information and tips to help others excel on their journey to OSCP. 
-There are plenty of charlatans out there who charged for information that are open-source and that is a shame.
+There are plenty of charlatans out there who charges for information that are open-source (or stolen from another person) and that is a mighty shame.
 Part of what drew me to this field was the generous information and experience sharing from other professionals so this is my way of contributing back to that deep pool of expertise.
 
 ## Quick Background
@@ -23,13 +23,13 @@ I only got 70 points for OSCP+ though so I am sure you can do better than me!
 
 ## Am I ready for the test?
 
-This seems like a perpetual question on the Offsec subreddit and no doubt on every test taker's mind. I myself had doubts about my readiness prior to the test.
+This seems like a perpetual question on the OSCP subreddit and also no doubt on every test taker's mind. I myself had doubts about my readiness prior to the test.
 
 Let me share my own experience so that perhaps in some manner, you could relate to it.
 
 I was basically given full time off for about six weeks from my work to prepare for the OSCP. This was my rough schedule:
 
-<u>Timeline</u>
+### Timeline
 
 **Last week of November 2024:** Activated my three month PEN-200 access
 
@@ -45,7 +45,7 @@ Started Full time work here
 
 **3rd Week of Janurary 2025**: Compelted all Lain's boxes. Redid OSCP A/B/C
 
-<u> FAQ </u>
+### FAQ 
 
 **Q:** Was I a uber wizard that did not need to see hints, walkthroughs or seek help from OffSec Discord?
 
