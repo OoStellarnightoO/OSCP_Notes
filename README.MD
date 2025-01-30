@@ -81,7 +81,7 @@ I placed links below for easier navigation:
 
 2) [How to Nmap] (https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/01-Nmap.MD)
 
-3) [Service Enumeration and What to do]
+3) [Service Enumeration and What to do] - Check the relevant services in the Service_Enumeration folder
 
 4) [Dealing with Web Services]
 

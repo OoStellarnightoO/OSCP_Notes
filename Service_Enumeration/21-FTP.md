@@ -35,6 +35,12 @@ ftp> binary
 200 Switching to Binary mode.
 ```
 
+Download everything with a single command to your current working directory
+
+```bash
+wget -m --no-passive ftp://anonymous:anonymous@<target ip> # this also switches off passive mode:)
+```
+
 
 ## Only Usernames or Passwords but not both
 
