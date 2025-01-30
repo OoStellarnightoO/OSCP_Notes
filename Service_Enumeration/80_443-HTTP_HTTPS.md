@@ -116,6 +116,7 @@ git show 'commit id'
 	- wp - wp-config.php
 	- if you have path traverse or rce, try looking for rsa keys. You may need to check what kinds of keys are there as it is not always id_rsa; you can do this by checking out the /home/target user/.ssh/authorized_keys file. ecdsa keys have a diff name from id_rsa (id_ecdsa) 
 - if you see things like parameters in the url, you should try path traversal
+- Also use burp suite to intercept and view responses. The web app may not always be able to respond in the way you expect!
 
 ```bash
 
@@ -143,3 +144,36 @@ then host a malicious php file and then smbserver again and then
 
 ```
 once you find some way to upload stuff, see if you can upload php or aspx files from your prepared Tools folders
+
+## Bypassing File Upload filters
+
+- try simple manipulation of the file extension. For e.g if php, try pHp or pHP.
+
+- try other versions of it like php2, phtml etc
+
+- rename your .php to the relevant file format such .pdf. Intercept the upload request and rename the file back to .php and forward. Might work.
+
+- try appending the legit extension and see if it tricks the system. like abc.pdf.php or abc.php.pdf
+
+- try appending the magic bytes to the malicious script to trick the system. To do this use burpsuite to intercept the upload and then add the magic bytes in the body.
+
+- change the file format header to application/pdf to see if it fools the system
+
+- If there is a WAF in effect, you can intercept the request and add the following headers to the POST request:
+
+From BurpSuite
+
+https://portswigger.net/bappstore/ae2611da3bbc4687953a1f4ba6a4e04c
+
+these following headers can be added to your request to attempt to bypass WAF.
+
+Be sure to add this before the Priority header or else it will hang!
+
+```bash
+
+X-Originating-IP: 127.0.0.1 
+X-Forwarded-For: 127.0.0.1 
+X-Remote-IP: 127.0.0.1 
+X-Remote-Addr: 127.0.0.1
+
+```
