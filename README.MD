@@ -89,7 +89,7 @@ I placed links below for easier navigation:
 
 3) [Service Enumeration and What to do] - Check the relevant services in the Service_Enumeration folder
 
-4) [Dealing with Web Services] - (https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/Service_Enumeration/80_443-HTTP_HTTPS.md)
+4) [Dealing with Web Services] - (https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/03%20-%20Service_Enumeration/80_443-HTTP_HTTPS.md)
 
 5) [Pivoting] - Ligolo-NG (https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/05%20-%20Pivoting/Pivoting%20with%20Ligolo-ng.md), Chisel (https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/05%20-%20Pivoting/Pivoting%20with%20Chisel.md)
 
