@@ -130,7 +130,7 @@ Get-Process <PID of interest from the netstat>
 
 8) Check for Scheduled Tasks
 
-Not always effective because your current users may not have permissions to view higher access level scheduled tasks so this may not return anything useful. Still no harm taking a quick look at it
+Not always effective because your current user may not have permissions to view higher access level scheduled tasks so this may not return anything useful. Still no harm taking a quick look at it
 
 ```cmd
 schtasks /query /fo LIST /v

