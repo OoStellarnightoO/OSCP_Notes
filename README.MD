@@ -91,11 +91,11 @@ I placed links below for easier navigation:
 
 4) [Dealing with Web Services] - (https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/Service_Enumeration/80_443-HTTP_HTTPS.md)
 
-5) [Pivoting] - Ligolo-NG (), Chisel ()
+5) [Pivoting] - Ligolo-NG (https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/05%20-%20Pivoting/Pivoting%20with%20Ligolo-ng.md), Chisel (https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/05%20-%20Pivoting/Pivoting%20with%20Chisel.md)
 
-6) [Windows Host Enumeration]
+6) [Windows Host Enumeration](https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/06-Windows%20Enumeration.md)
 
-7) [Linux Host Enumeration]
+7) [Linux Host Enumeration](https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/07-%20Linux%20Enumeration.md)
 
 8) [Windows PrivEsc]
 
