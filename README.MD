@@ -63,7 +63,7 @@ The key takeaway here is to take the hints, update your methodology and notes. I
 
 **Q:** How difficult is the exam compared to the challenge labs?
 
-**A:** There is no good answer because difficulty is subjective and complicated by the fact that there are multiple exam sets from what I have heard. I am sure you would have heard of this so called nightmare Jenkins AD set (which certainly did exist in the previous edition of the OSCP from hearsay but I am not so sure about the new OSCP+). My AD Set was stupidly easy with the difficulty on par or even slightly easier than OSCP A/B/C and I think i lucked out there. That said, my standalones felt like PG Very Hard.
+**A:** There is no good answer because difficulty is subjective and complicated by the fact that there are multiple exam sets from what I have heard. I am sure you would have heard of this so called nightmare Jenkins AD set (which certainly did exist in the previous edition of the OSCP given its noteriety but I am not so sure about the new OSCP+). My AD Set was stupidly easy with the difficulty on par or even slightly easier than OSCP A/B/C and I definitely lucked out there. That said, my standalones felt like PG Very Hard.
 
 IMO, if you fail OSCP, it may not be because you are not prepared, but it may be because you were just presented with a set of very hard boxes or had terrible luck with the exam environment. If you passed OSCP, it is not necesssary that you are certified hax0r. Maybe you got lucky with the boxes. So stay humble even if you have OSCP and don't be too hard on yourself if you failed.
 
