@@ -61,6 +61,12 @@ The key takeaway here is to take the hints, update your methodology and notes. I
 
 **A:** Minimally OSCP A/B/C. If you have the time, do Secura, Relia, Medtech and maybe parts of Skylark. OSCP A/B/C somewhat resembles the actual exam though with the assumed breach scenario, the AD set is not entirely accurate but you get a good sense of the exam. Zeus and Posiedon are generally thought of as out of scope for the exam.
 
+**Q:** How difficult is the exam compared to the challenge labs?
+
+**A:** There is no good answer because difficulty is subjective and complicated by the fact that there are multiple exam sets from what I have heard. I am sure you would have heard of this so called nightmare Jenkins AD set (which certainly did exist in the previous edition of the OSCP from hearsay but I am not so sure about the new OSCP+). My AD Set was stupidly easy with the difficulty on par or even slightly easier than OSCP A/B/C and I think i lucked out there. That said, my standalones felt like PG Very Hard.
+
+IMO, if you fail OSCP, it may not be because you are not prepared, but it may be because you were just presented with a set of very hard boxes or had terrible luck with the exam environment. If you passed OSCP, it is not necesssary that you are certified hax0r. Maybe you got lucky with the boxes. So stay humble even if you have OSCP and don't be too hard on yourself if you failed.
+
 **Q:** Lain or TJNull?
 
 **A:** Why not both? Instead of trying to "optimise", just do boxes with emphasis on completing the PEN-200 Challenge labs first before doing the PG Practice and Play boxes recommended in both lists. I strongly recommend doing the "Administrator" box from HTB as it is a assumed breach scenario and allows you to practice ACL abuse.  **For me what worked was the sheer amount of boxes I have done over the past month. So much so that I can quickly identify an attack vector when scanning and enumerating**
