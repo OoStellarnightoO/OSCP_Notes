@@ -128,4 +128,35 @@ Get-Process <PID of interest from the netstat>
 
 ```
 
-Well that is about it. If there is nothing so far, it is likely to be related to services or scheduled tasks or some senstive file buried in the filesystem which winpeas can do for you.
+8) Check for Scheduled Tasks
+
+Not always effective because your current users may not have permissions to view higher access level scheduled tasks so this may not return anything useful. Still no harm taking a quick look at it
+
+```cmd
+schtasks /query /fo LIST /v
+```
+
+This will output a lot of things. But the relevant stuff will be right at the top. The rest are default stuff. If you dont see anything interesting, it may be that there is nothing there or there is something there that is being run by a higher-priv user and you just dont have the rights to see it.
+
+9) Check for unquoted Service Paths
+
+We can use this when we can write to a service's main or subdirectory but cannot replace files
+
+- Each service maps to an exe file that will be run when the service is started
+
+- the vulnerability lies in paths to the exe where there is one or more spaces and is not enclosed within quotes
+
+- When a service is started and a process is created, the CreateProcess function is used.  The function starts interpreting the path from left to right until it reaches a space and then it appends .exe and the rest is treated as arguments
+
+```cmd
+wmic service get name,pathname | findstr /i /v "C:\Windows\\" | findstr /i /v """
+
+# if you find any services that dont look like default services (you need to do more boxes and then you will know what is not normal)
+# check if our current user can start and stop the service
+
+Start-Service SusService
+
+Stop-Service SusService
+```
+
+Well that is about it. If there is nothing so far, it is likely to be related to services or scheduled tasks or some sensitive file buried in the filesystem which winpeas can do for you.
