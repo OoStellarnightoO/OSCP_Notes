@@ -6,6 +6,8 @@ First of all, OSCP is an exam and it is important to treat it like any other exa
 
 That means understanding the exam format and the environment. I see OSCP more like a puzzle game or more accurately a CTF. There are rabbit holes and there are intended paths. If something looks suspicious, it is (probably) suspicious and is the intended path. 
 
+How do you know it is a rabbit hole? Well you cant really say 100% for sure but if you tried everything you know of and it doesnt work for like three times and after reverting the machine, it sitll doesnt work? it is probably a rabbit hole. 
+
 How do you prepare for CTFs or puzzle games? By doing more CTFs (i.e. Challenge Labs and PG Boxes) and understanding how a puzzle is designed (by offsec).
 
 This is why I do not really recommend doing any other additional boxes that ARE NOT by OffSec because OffSec design their boxes in a certain manner.
@@ -22,7 +24,7 @@ Now I cannot guarentee you will pass the exam with my notes because of the RNG n
 
 Some videos and articles that I found to be actually useful: 
 
-(Sorry to be a little annoyed at the many self-congratulatory articles on medium about how they pwned the OSCP or tried harder and all that mantra but offer little practical advice other than **YOU GOTTA TRY HARDER**. Ok rant over)
+(Sorry to be a little annoyed at the many self-congratulatory articles on medium about how they pwned the OSCP in five hours or tried harder and all that truism mantra but offer little practical advice other than **YOU GOTTA TRY HARDER**. Ok rant over but You can probably tell by now about my thoughts on "Try Harder")
 
 https://medium.com/@redefiningreality/your-bs-less-guide-to-acing-oscp-4eccaf497410 - This is truly a bs-less guide. My inspiration actually.
 

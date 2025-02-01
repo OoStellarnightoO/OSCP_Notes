@@ -35,7 +35,7 @@ I was basically given full time off for about six weeks from my work to prepare 
 
 **1st Week of December 2024:** Went on one week holiday (haha)
 
-**Rest of December:** Drill PEN-200 materials. I did not complete the whole module. I left AV-Evasion, and the AWS mods untouched as these were not within the scope of OSCP+ as of January 2025. Subscribed to one month PG on 29 December 2024.
+**Rest of December:** Drill PEN-200 materials. I did not complete the whole course and speed run the enumeration, and AD stuff as TCM's materials were more than sufficient. I left AV-Evasion, and the AWS mods untouched as these were not within the scope of OSCP+ as of January 2025. Subscribed to one month PG on 29 December 2024.
 
 **1st Week of January 2025**: Completed Secura, Relia, Medtech, OSCP A/B/C. Started doing PG boxes from Lain's list
 
@@ -56,6 +56,28 @@ As I reached OSCP C, I realised the frequency of hints I checked dropped dramati
 As you do more boxes, you start to intuitively understand how OSCP design its boxes and you start to shape your methodology towards it.
 
 The key takeaway here is to take the hints, update your methodology and notes. If you run into a similar situation, you want to be in a state where you don't need the hints anymore because it is in your notes and you understand the problem at heart. **So it is fine to resort to hints and walkthroughs as long as you learn and NOTE the tool, method and the thinking behind it! Also do more boxes if you can**
+
+**Q:** Is the course PWK enough for me to pass the OSCP?
+
+**A:** From my perspective? Sad to say that it is a resounding no especially if you have no background. Go google and search for OSCP tips and you will see that a majority of the advice revolve around additional materials from TryHackMe, HacktheBox, and TCM Security. Now I caveat, I actually think the Challenge Labs and the PG boxes (you might need to pay for this if your subscription doesnt cover) are the best part of it and the most relevant to OSCP preparation.
+
+You will see defenders of OSCP saying that it is all about the Trying Harder🤮 mindset and googling for things that are not covered in the course. I just think it is not acceptable for a course costing 2k USD to be not comprehensive in its materials. 
+
+Does the PWK material suck? No! It is actually decent stuff. My problem with it is that it does not prepare you for the exam sufficiently and the ridiculous price point. Yea I am pretty hung up over the cost if you can't tell by now. Why? 
+
+1) It does not instil the methodology and the thinking when confronting a box. Example, if you are doing AD, the first thing you should absolutely do is to go after the low-hanging fruits which is kerberoasting, as-rep and password spraying. This is not evident from the course material. 
+
+- On this, OffSec obviously can do this job. Look at S1ren's videos. That is methodology. Why can't OffSec include a module on her metholodogy? She is not even referenced in the PWK materials. (you can find her videos on youtube.)
+
+2) There are a lot of useful but not relevant materials for the OSCP exam. Yes, learning how to live off the land and use native binaries are great for red-teaming but for a 23hour 45 minutes exam? You are going to be using tools. Once you start PWK, you realised that the material does not respect your time. You will be asked to create enumeration and exploitation scripts manually and then after wasting one hour or more of your time (per lesson), they tell you hey here is this (sometimes outdated) tool that does all the above and more. As a working adult, I just don't have the tolerence for this kind of nonsense. 
+
+3) Why teach SQLMap, Nessus, Metasploit when they are either outright banned or heavily restricted. Come on. And again if you are here for the knowledge, there are way better sources for these stuff (and cheaper). Want to learn SQLi and Web App pentest? BurpSuite Academy has a free course. Want to use Metasploit well, HTB has a fairly comprehensive section on it.
+
+4) They have the gall to create OSCP+ and then not bother updating their modules and challenge labs. Some of the tools taught are already deprecated like crackmapexec, legacy bloodhound. There is no mention of tools such as ligolo-ng, netexec when these has proliferated for at least two to three years and widely used by people taking the test. I can accept not updating materials timely if your course is cheap but a course that cost 2k USD and markets itself as THE PENTEST cert? There is really no good excuse.
+
+5) OffSec discord support and its Student Mentors are wildly inconsistent in terms of reliability. Some Student Mentors are quite nice and provide good advice. Some are literally TryHarder folks. I even see Student Mentors contradicting each other on the intended path for the labs. I see a Student Mentor telling someone who had difficulty setting up ligolo to use chisel instead because ligolo is not taught in the course. Another Student Mentor was more than happy to address ligolo issues. These Student Mentors are paid employees of OffSec and your contact point when you get stuck. So why the inconsistency? For 2k+ USD? This is again not acceptable. 
+
+But this is the kind of the thing that many others such as myself want to address. So I sincerely hope this set of notes can help you in some manner.
 
 **Q:** What Challenge Labs should I be doing?
 
