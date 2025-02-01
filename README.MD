@@ -49,6 +49,7 @@ Started Full time work here
 
 If you can OSCP A/B/C without much difficulty, I would say you can probably go for it. To increase your chances, I would suggest doing TJNull and Lain's recommended PG Boxes just to have the chance to practice your metholodolgy and increase your exposure to different attack vectors.
 
+----------------------
 
 ### FAQ 
 
@@ -61,6 +62,8 @@ As I reached OSCP C, I realised the frequency of hints I checked dropped dramati
 As you do more boxes, you start to intuitively understand how OSCP design its boxes and you start to shape your methodology towards it.
 
 The key takeaway here is to take the hints, update your methodology and notes. If you run into a similar situation, you want to be in a state where you don't need the hints anymore because it is in your notes and you understand the problem at heart. **So it is fine to resort to hints and walkthroughs as long as you learn and NOTE the tool, method and the thinking behind it! Also do more boxes if you can**
+
+-------------------------------
 
 **Q:** Is the course PWK enough for me to pass the OSCP?
 
@@ -86,26 +89,31 @@ But hey, lets create a cringe song about Trying Harder. (The below is really a s
 
 https://www.youtube.com/watch?v=t-bgRQfeW64
 
-But this is the kind of the thing that many others such as myself want to address. So I sincerely hope this set of notes can help you in some manner.
+
+--------------------------------------
 
 **Q:** What Challenge Labs should I be doing?
 
 **A:** Minimally OSCP A/B/C. If you have the time, do Secura, Relia, Medtech and maybe parts of Skylark. OSCP A/B/C somewhat resembles the actual exam though with the assumed breach scenario, the AD set is not entirely accurate but you get a good sense of the exam. Zeus and Posiedon are generally thought of as out of scope for the exam.
 
+----------------------------------
 **Q:** How difficult is the exam compared to the challenge labs?
 
 **A:** There is no good answer because difficulty is subjective and complicated by the fact that there are multiple exam sets from what I have heard. I am sure you would have heard of this so called nightmare Jenkins AD set (which certainly did exist in the previous edition of the OSCP given its noteriety but I am not so sure about the new OSCP+). My AD Set was stupidly easy with the difficulty on par or even slightly easier than OSCP A/B/C and I definitely lucked out there. That said, my standalones felt like PG Very Hard.
 
 IMO, if you fail OSCP, it may not be because you are not prepared, but it may be because you were just presented with a set of very hard boxes or had terrible luck with the exam environment. If you passed OSCP, it is not necesssary that you are certified hax0r. Maybe you got lucky with the boxes. So stay humble even if you have OSCP and don't be too hard on yourself if you failed.
 
+----------------------------------------
 **Q:** Lain or TJNull?
 
 **A:** Why not both? Instead of trying to "optimise", just do boxes with emphasis on completing the PEN-200 Challenge labs first before doing the PG Practice and Play boxes recommended in both lists. I strongly recommend doing the "Administrator" box from HTB as it is a assumed breach scenario and allows you to practice ACL abuse.  **For me what worked was the sheer amount of boxes I have done over the past month. So much so that I can quickly identify an attack vector when scanning and enumerating**
 
+----------------------------------
 **Q:** How do you notetake?
 
 **A:** Different strokes for different people but I love Obsidian because of its community plugins. I sync my notes using Google Cloud (you could pay for Obsidian Sync if you want) and I used the Templater plugin to instantly plant my enumeration template when i note take for a box.
 
+------------------------------
 ## 📚How to use this guide
 
 Everything is in .md so you can just download them or clone them and you can use it in obsidian or notion. Feel free to modify for your own needs!
