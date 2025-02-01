@@ -6,6 +6,8 @@ Part of what drew me to this field was the generous information and experience s
 
 ## Quick Background
 
+![alt text](/Assets/mega64_hacking.gif)
+
 I would love to say that I was pwning Microsoft 98 boxes (yea I am old enough to have used diskettes and MS98) at 6 years old and solving leetcode at 12.
 
 But no. I was a non tech person for most of my life and the hardest technical thing I have done before the last two years was doing up a static HTML page.
@@ -45,6 +47,9 @@ Started Full time work here
 
 **3rd Week of Janurary 2025**: Completed all Lain's boxes. Redid OSCP A/B/C without any hints. Also did some TJNull PG boxes
 
+If you can OSCP A/B/C without much difficulty, I would say you can probably go for it. To increase your chances, I would suggest doing TJNull and Lain's recommended PG Boxes just to have the chance to practice your metholodolgy and increase your exposure to different attack vectors.
+
+
 ### FAQ 
 
 **Q:** Was I a uber wizard that did not need to see hints, walkthroughs or seek help from OffSec Discord?
@@ -61,7 +66,7 @@ The key takeaway here is to take the hints, update your methodology and notes. I
 
 **A:** From my perspective? Sad to say that it is a resounding no especially if you have no background. Go google and search for OSCP tips and you will see that a majority of the advice revolve around additional materials from TryHackMe, HacktheBox, and TCM Security. Now I caveat, I actually think the Challenge Labs and the PG boxes (you might need to pay for this if your subscription doesnt cover) are the best part of it and the most relevant to OSCP preparation.
 
-You will see defenders of OSCP saying that it is all about the Trying Harder🤮 mindset and googling for things that are not covered in the course. I just think it is not acceptable for a course costing 2k USD to be not comprehensive in its materials. 
+You will see defenders of OSCP saying that it is all about the Trying Harder🤮 mindset and googling for things that are not covered in the course. This avoids the big elephant in the room. Why it is acceptable for a course costing 2k USD to be not comprehensive in its materials?
 
 Does the PWK material suck? No! It is actually decent stuff. My problem with it is that it does not prepare you for the exam sufficiently and the ridiculous price point. Yea I am pretty hung up over the cost if you can't tell by now. Why? 
 
@@ -76,6 +81,10 @@ Does the PWK material suck? No! It is actually decent stuff. My problem with it 
 4) They have the gall to create OSCP+ and then not bother updating their modules and challenge labs. Some of the tools taught are already deprecated like crackmapexec, legacy bloodhound. There is no mention of tools such as ligolo-ng, netexec when these has proliferated for at least two to three years and widely used by people taking the test. I can accept not updating materials timely if your course is cheap but a course that cost 2k USD and markets itself as THE PENTEST cert? There is really no good excuse.
 
 5) OffSec discord support and its Student Mentors are wildly inconsistent in terms of reliability. Some Student Mentors are quite nice and provide good advice. Some are literally TryHarder folks. I even see Student Mentors contradicting each other on the intended path for the labs. I see a Student Mentor telling someone who had difficulty setting up ligolo to use chisel instead because ligolo is not taught in the course. Another Student Mentor was more than happy to address ligolo issues. These Student Mentors are paid employees of OffSec and your contact point when you get stuck. So why the inconsistency? For 2k+ USD? This is again not acceptable. 
+
+But hey, lets create a cringe song about Trying Harder. (The below is really a song from OffSec) 
+
+https://www.youtube.com/watch?v=t-bgRQfeW64
 
 But this is the kind of the thing that many others such as myself want to address. So I sincerely hope this set of notes can help you in some manner.
 
