@@ -79,33 +79,35 @@ IMO, if you fail OSCP, it may not be because you are not prepared, but it may be
 
 Everything is in .md so you can just download them or clone them and you can use it in obsidian or notion. Feel free to modify for your own needs!
 
-I will personally start with preparing the environment!
+I will personally start with preparing the environment and then just go down the list.
 
 I placed links below for easier navigation:
 
 1) [Preparing for the Exam] (https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/00-Pre-OSCP%20Preparation.MD)
 
-2) [How to Nmap] (https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/01-Nmap.MD)
+2) [Mindset and Strategy] ()
 
-3) [Service Enumeration and What to do] - Check the relevant services in the Service_Enumeration folder
+3) [How to Nmap] (https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/01-Nmap.MD)
 
-4) [Dealing with Web Services] - (https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/03%20-%20Service_Enumeration/80_443-HTTP_HTTPS.md)
+4) [Service Enumeration and What to do] - Check the relevant services in the Service_Enumeration folder
 
-5) [Pivoting] - Ligolo-NG (https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/05%20-%20Pivoting/Pivoting%20with%20Ligolo-ng.md), Chisel (https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/05%20-%20Pivoting/Pivoting%20with%20Chisel.md)
+5) [Dealing with Web Services] - (https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/03%20-%20Service_Enumeration/80_443-HTTP_HTTPS.md)
 
-6) [Windows Host Enumeration](https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/06-Windows%20Enumeration.md)
+6) [Pivoting] - Ligolo-NG (https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/05%20-%20Pivoting/Pivoting%20with%20Ligolo-ng.md), Chisel (https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/05%20-%20Pivoting/Pivoting%20with%20Chisel.md)
 
-7) [Linux Host Enumeration](https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/07-%20Linux%20Enumeration.md)
+7) [Windows Host Enumeration](https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/06-Windows%20Enumeration.md)
 
-8) [Windows PrivEsc]
+8) [Linux Host Enumeration](https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/07-%20Linux%20Enumeration.md)
 
-9) [Linux PrivEsc]
+9) [Windows PrivEsc]
 
-10) [Cracking Passwords]
+10) [Linux PrivEsc]
 
-11) [Active Directory Enum, Lateral Movement and PrivEsc]
+11) [Cracking Passwords]
 
-12) [Other Random Stuff]
+12) [Active Directory Enum, Lateral Movement and PrivEsc]
+
+13) [Other Random Stuff]
 
 
 ## Other Awesome Resources!
