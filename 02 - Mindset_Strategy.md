@@ -2,9 +2,9 @@
 
 This was a fairly late addition and did not exist in my notes. However this is something I feel should be addressed early. 
 
-First of all, OSCP is an exam and it is important to treat it as an exam just like the exams you have taken in your academic life.
+First of all, OSCP is an exam and it is important to treat it like any other exams you have taken in your academic life.
 
-That means understanding the exam format and the environment. I see OSCP like a puzzle game or more accurately a CTF. There are rabbit holes and there are intended paths. If something looks suspicious, it is (probably) suspicious and is the intended path. 
+That means understanding the exam format and the environment. I see OSCP more like a puzzle game or more accurately a CTF. There are rabbit holes and there are intended paths. If something looks suspicious, it is (probably) suspicious and is the intended path. 
 
 How do you prepare for CTFs or puzzle games? By doing more CTFs (i.e. Challenge Labs and PG Boxes) and understanding how a puzzle is designed (by offsec).
 
