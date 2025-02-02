@@ -112,7 +112,14 @@ sudo -l can reveal quick wins and more often than not THE PE vector.
 
 env to check for hardcoded credentials
 
-2) The second thing is user enumeration and user home directories enumeration
+2) Check Kernel Version. IF it looks ancient, then it might be a kernel exploit
+
+```bash
+uname -a 
+cat /etc/os-release
+```
+
+3) Next is user enumeration and user home directories enumeration
 
 ```
 cat /etc/passwd
@@ -126,10 +133,60 @@ ls -la /etc/passwd /etc/shadow  # might as well see if you can write to passwd o
 ls -laRH /home
 ```
 
-3) The third thing you should do is to enumerate the world writable directories. Any thing inside that is not default should be investigated.
+4) Next thing you should do is to enumerate the world writable directories. Any thing inside that is not default should be investigated.
 
 ```bash
 ls -la /tmp /opt /dev/shm /var/tmp
+# the below command searches for all world writable directories. Any non default directories are worth investigating
+find / -writable -type d 2>/dev/null
 ```
 
+5) Check out the cron jobs. Do note that your user may not have privs to see root's cron jobs so a lack of results does not necessary mean that there is no cron jobs! 
 
+```bash
+crontab -l # this checks your own cron jobs. Usually there is nothing and plus you cant really elevate from this.
+ls -lah /etc/cron.d
+cat /etc/crontab
+# the below might output information that pspy somehow misses. I am not sure why
+systemctl status cron
+```
+
+6) Last thing you should do is to check out /var/www/html if there are web services. What you are looking for are config files that may contain hard-coded credentials. You can use the find command to look for things
+
+```bash
+find / -name *.conf, *.yml -type f 2>/dev/null
+# this searches for a particular string in all files recursively from the specified directory. Might take a while to run though
+grep -Horn <text> <dir>
+```
+
+## No Shell but can read files via webshell or some other blackmagic
+
+https://idafchev.github.io/enumeration/2018/03/05/linux_proc_enum.html
+
+```bash
+# if you have Remote File Read (but cant get a shell you can use the following method)
+
+/proc/self/cmdline
+
+/proc/<pid>/cmdline # can write a simple script to iterate through all PIDs
+
+/proc/sched_debug
+```
+
+## AutoEnum
+
+for lse.sh I find good results with the following command which is more verbose than the basic version
+
+```bash
+./lse.sh -l1
+```
+
+for pspy, do add the following flag. Run pspy if you suspect that root is running some cron job that you cant see from your current user's permission.
+
+This is similiar to scheduled tasks in Windows where if your user may not be privileged enough to see root cron jobs even after you check out /etc/crontab
+
+```bash
+./pspy64 -pf  # run -f to see file commands  such as cd or else you will miss stuff!
+
+# let it run a couple of minutes just to see if there is anything
+```
