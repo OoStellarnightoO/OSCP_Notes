@@ -34,7 +34,7 @@ https://www.youtube.com/watch?v=pIdbPp6vNmE - I was initially unsure when I saw 
 
 ## Enumerating, Attacking and Pwning a Box
 
-I am not going to talk about tools or commands here. Rather I want to talk about "TTPs", broad concepts on how to approach a box in general. 
+I am not going to talk about tools or commands here. Rather I want to talk about broad concepts on how to approach a box in general. 
 
 When you dont have a (OSCP-ish) methodology or dont question the whys behind how a tool works and what a tool is supposed to achieve, that is how you fail the OSCP. The course does not cover every scenario and tools that you will need to pass the exam (whether this is fair or not is another matter all together)
 
