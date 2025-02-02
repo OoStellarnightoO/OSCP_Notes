@@ -36,6 +36,24 @@ I only got 70 points for OSCP+ though so I am sure you can do better than me!
 
 This seems like a perpetual question on the OSCP subreddit and also no doubt on every test taker's mind. I myself had doubts about my readiness prior to the test.
 
+TLDR? You are ready when you can start a box and you can run through your enumeration like a well-oiled machine and identify potential vectors for investigation. When you run into difficulties, you look through your notes, make sure you didn't miss anything out and you go out and google. 
+
+When you get a shell, you don't blank out. You start manual enumeration and then run the tools. You come out with hypotheses on what to try out and execute without hesistation. You can only reach this state if you do boxes over and over again until it is second nature.
+
+Think about it. How did you learn to cycle (just stay with me if you don't know how to cycle)? 
+
+The first few times, you fall over. 
+
+The next few times, you figured out how to peddle and you get somewhere but you dont really know how to turn and you crash when the route gets narrow. 
+
+The next few times, you adjust your body weight subtly and you turn well but you have difficulty climbing hills. 
+
+Then you realise that you can change the gears on your bicycle to make it easier to climb.
+
+The same applies to the OSCP. It sucks at the start but take good notes, learn from your failures, try new things, note if it works (or dont), and keep going until it becomes second nature.
+
+---------------------
+
 Let me share my own experience so that perhaps in some manner, you could relate to it.
 
 I was basically given full time off for about six weeks from my work to prepare for the OSCP. This was my rough schedule:
