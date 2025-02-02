@@ -11,7 +11,7 @@ you are looking at anywhere from a 100 to 300+ hour investment to study for the 
 
 If you have not gotten your PWK course, I strongly suggest getting the **LearnOne One Year Subcription** instead of the three months package.
 
-I had no choice since it was company sponsored and I was lucky to have some background, free time off and a supportive partner to put this much time into OSCP.
+I had no choice since it was company sponsored and I was lucky to have some background, free time off and a supportive partner to put this much time into OSCP so three months were sufficient.
 
 ## Quick Background
 

@@ -34,4 +34,31 @@ https://www.youtube.com/watch?v=pIdbPp6vNmE - I was initially unsure when I saw 
 
 ## The Exam
 
-The exam is obviously unrealistic and you should treat it as such. Put yourself in the shoes of an examiner. How would you design your boxes to test the concepts that (should) are taught in the PWK course?
+My suggestion is to discuss with your partner/family that you are going to be doing this intense 23h45 mins exam and set aside a day with no distractions and where you will be well rested the day before, so no night shifts or crazy busy days. Take a half day off the day before if you need to.
+
+The day before, ensure that your VM is working, your camera set up is working and all your tools are working. Then sleep early
+
+Schedule your exam around 2 to 3 hours after your normal waking hours. I would suggest getting a light exercise, a nice breakfast and a cup of coffee.
+
+30 minutes before the exam, open up the various tabs from the guide on the proctered exam that offsec provides to the troubleshooting guide.
+
+Set up your favourite notetaking software if you had not.
+
+Once the exam start, this is my recommendation:
+
+1) Start full nmap scans for the three standalones. 
+
+2) Go after the AD first. I think the AD is the easiest part of the exam and getting 40 points all the bat can be a massive morale boost. This is an assumed breach scenario and you will provided domain credentials. You cant query the DC immediately as it is on a different subnet but I am positive that the domain creds can get you a shell on the system be it via rdp or win-rm. From there, run your domain enumeration tools.
+
+3) IMO, AD boxes in OSCP are a bunch of windows boxes that happen to be in AD environment. You will still need to use the Windows PE methods to own the domain.
+
+4) Just as in OSCP A/B/C, you need to pwn the first AD machine, then move on to pwn the second one and then from there pwn the DC. 
+
+5) Try and get the AD within four hours or so. I suggest taking a quick 15 min break once you pwn the first AD and taking a longer 30 minute break after getting the whole AD.
+
+6) If all goes well, after taking the AD, it is probably lunch time. I would say get a good lunch and maybe a shower to refresh your mind.
+
+7) Now concentrate on getting a foothold on any of the three machines and root it if you can. 
+
+8) By dinner time, if you have zero progress, i suggest taking a nap. This is because at this stage, you are mentally and physcially tired. You still have 12+ hours. Take a nap, a hot shower, a quick bite and coffee and go after the boxes.
+
