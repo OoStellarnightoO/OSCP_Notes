@@ -4,6 +4,15 @@ I believe in sharing information and tips to help others excel on their journey 
 There are plenty of charlatans out there who charges for information that are open-source (or stolen from another person) and that is a mighty shame.
 Part of what drew me to this field was the generous information and experience sharing from other professionals so this is my way of contributing back to that deep pool of expertise.
 
+## A Quick Warning
+
+Depending on how much knowledge you already have and whether you are working a full time job or have to dedicate time for family matters,
+you are looking at anywhere from a 100 to 300+ hour investment to study for the OSCP.
+
+If you have not gotten your PWK course, I strongly suggest getting the **LearnOne One Year Subcription** instead of the three months package.
+
+I had no choice since it was company sponsored and I was lucky to have some background, free time off and a supportive partner to put this much time into OSCP.
+
 ## Quick Background
 
 ![alt text](/Assets/mega64_hacking.gif)
