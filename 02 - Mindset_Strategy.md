@@ -32,6 +32,21 @@ https://www.youtube.com/watch?v=pvNYaUs0aqc - How to Pass the OSCP+ Exam on Your
 
 https://www.youtube.com/watch?v=pIdbPp6vNmE - I was initially unsure when I saw the preview image as it resembles one of the many (not so useful) videos on how to pass OSCP but having gone through the video, It is not only hilarious but VERY USEFUL AND PRACTICAL.
 
+## Enumerating, Attacking and Pwning a Box
+
+I am not going to talk about tools or commands here. Rather I want to talk about "TTPs", broad concepts on how to approach a box in general. 
+
+When you dont have a (OSCP-ish) methodology or dont question the whys behind how a tool works and what a tool is supposed to achieve, that is how you fail the OSCP. The course does not cover every scenario and tools that you will need to pass the exam (whether this is fair or not is another matter all together)
+
+To maximise your chance of passing and to not just rely on the ambigious advice of "TRY HARDER", think of the approach to a box in this manner:
+
+**Objective**: Get Administrator/Administrator-level/root access on the box
+
+
+
+
+
+
 ## The Exam
 
 My suggestion is to discuss with your partner/family that you are going to be doing this intense 23h45 mins exam and set aside a day with no distractions and where you will be well rested the day before, so no night shifts or crazy busy days. Take a half day off the day before if you need to.
@@ -61,4 +76,6 @@ Once the exam start, this is my recommendation:
 7) Now concentrate on getting a foothold on any of the three machines and root it if you can. 
 
 8) By dinner time, if you have zero progress, i suggest taking a nap. This is because at this stage, you are mentally and physcially tired. You still have 12+ hours. Take a nap, a hot shower, a quick bite and coffee and go after the boxes.
+
+**Most importantly, stay calm. You run out of things to do before you run out of time. Sometimes, you have to just treat some artefacts as deliberate rabbit holes no matter how tempting they look. If they just dont work, it is likely a rabbit hole.**
 
