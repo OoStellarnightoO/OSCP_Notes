@@ -43,7 +43,7 @@ I placed links below for easier navigation:
 
 11) [Cracking Passwords]
 
-12) [Active Directory Enum, Lateral Movement and PrivEsc]
+12) [Active Directory Enum, Lateral Movement and PrivEsc](https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/12-ActiveDirectory.md)
 
 13) [Other Random Stuff]
 
