@@ -173,3 +173,25 @@ nxc mssql <MS02 IP> -u sql_svc -p 'pass' --put-file SigmaPotato.exe 'C:\\Users\\
 9) Once again like with MS01, you need to priv esc and then repeat step 4. Identify any creds that belong to domain admin group if there are.
 
 10) if there are, great! you can use impacket-psexec to get in and get the flag. if not, you need to do password spraying again but this time with your new additional creds.
+
+
+--------------
+
+## Bloodhound CE
+
+I think bloodhound is overkill for OSCP but there is no harm in doing more enumeration.
+Everytime you get a new user or get on a new host, it is a good idea to rerun sharphound as you can sometimes get new information.(I am not quite sure why)
+
+This is assuming you have bloodhound CE.
+
+```powershell
+# via SharpHound.ps1
+Invoke-BloodHound -CollectionMethod All -OutputDirectory <path> -OutputPrefix "<str of choice>"
+# via the exe
+sharphound.exe -c ALL
+```
+You can also run bloodhound-python from kali but it might not work
+```bash
+# If LDAPS run with --use-ldaps
+bloodhound-python -c All -u username -p password -d domain.tld -ns domain-controller-ip
+```
