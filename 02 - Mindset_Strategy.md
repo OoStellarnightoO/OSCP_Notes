@@ -36,7 +36,7 @@ https://www.youtube.com/watch?v=pIdbPp6vNmE - I was initially unsure when I saw 
 
 I am not going to talk about tools or commands here. Rather I want to talk about broad concepts on how to approach a box in general. 
 
-When you dont have a (OSCP-ish) methodology or dont question the whys behind how a tool works and what a tool is supposed to achieve, that is how you fail the OSCP. The course does not cover every scenario and tools that you will need to pass the exam (whether this is fair or not is another matter all together)
+When you dont have a (OSCP-ish) methodology or dont questionwhat a tool is supposed to achieve, that is how you fail the OSCP. The course does not cover every scenario and tools that you will need to pass the exam (whether this is fair or not is another matter all together). Try to have different ways of achieving the same goals. Have an admin shell but cant get its password or hash? Use your admin powers to create a new admin user and then dump hashes via nxc if mimikatz has issues.
 
 To maximise your chance of passing and to not just rely on the ambigious advice of "TRY HARDER", think of the approach to a box in this manner:
 
@@ -63,7 +63,7 @@ Once the exam start, this is my recommendation:
 
 1) Start full nmap scans for the three standalones. 
 
-2) Go after the AD first. I think the AD is the easiest part of the exam and getting 40 points all the bat can be a massive morale boost. This is an assumed breach scenario and you will provided domain credentials. You cant query the DC immediately as it is on a different subnet but I am positive that the domain creds can get you a shell on the system be it via rdp or win-rm. From there, run your domain enumeration tools.
+2) Go after the AD first. I think the AD is the easiest part of the exam and getting 40 points off the bat can be a massive morale boost. This is an assumed breach scenario and you will be provided domain credentials. You can't query the DC immediately as it is on a different subnet but I am positive that the domain creds can get you a shell on the system be it via rdp or win-rm. From there, run your domain enumeration tools.
 
 3) IMO, AD boxes in OSCP are a bunch of windows boxes that happen to be in AD environment. You will still need to use the Windows PE methods to own the domain.
 
@@ -71,7 +71,7 @@ Once the exam start, this is my recommendation:
 
 5) Try and get the AD within four hours or so. I suggest taking a quick 15 min break once you pwn the first AD and taking a longer 30 minute break after getting the whole AD.
 
-6) If all goes well, after taking the AD, it is probably lunch time. I would say get a good lunch and maybe a shower to refresh your mind.
+6) If all goes well, after taking the AD, it is probably lunch time. I would say get a good lunch and maybe a shower to refresh your mind. also might as well redo a full scan for all the three standalones while you are having lunch/showering.
 
 7) Now concentrate on getting a foothold on any of the three machines and root it if you can. 
 

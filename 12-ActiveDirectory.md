@@ -192,6 +192,6 @@ sharphound.exe -c ALL
 ```
 You can also run bloodhound-python from kali but it might not work
 ```bash
-# If LDAPS run with --use-ldaps
+# If LDAPS, run with --use-ldaps
 bloodhound-python -c All -u username -p password -d domain.tld -ns domain-controller-ip
 ```
