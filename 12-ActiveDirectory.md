@@ -18,9 +18,9 @@ The broad strategy is thus as such:
 
 1) Gain initial foothold on MS01 with given domain creds. Enumerate MS01 throughly using the Windows Enumeration techniques I have shared. PrivEsc to Local Admin.
 
-2) Once Admin on MS01, **don't immediately get jump to MS02**. Enumerate MS01 throughly this time as Admin. There may be secrets that you can find. Also please remember to dump the NTLM hashes and check lsa secrets using mimikatz. You may gain additional domain creds or passwords that you can then use.
+2) Once Admin on MS01, **don't immediately get jump to MS02**. Enumerate MS01 throughly this time as Admin. There may be secrets that you can find. Also please remember to dump the NTLM hashes and check lsa secrets using mimikatz. You may gain additional domain creds or passwords that you can then use. If needed, get persistence via either getting the Admin's hash or creating a new admin user with rights to RDP/WinRM in.
 
-3) Once you have enumerated MS01 as Admin and have gained (or not gained) any sensitive information, start a ligolo tunnel so that you can attack MS02 and query the DC. 
+3) Once you have enumerated MS01 as Admin and have gained (or not gained) any sensitive information, start a ligolo tunnel so that you can attack MS02 and query the DC. Since you are Admin on MS01, make your life easier and disable the firewall on MS01.
 
 4) As you can query the DC from kali, you can now run AD Enumeration tools such as SharpHound, ldapdomaindump etc. Enumerate Domain Users and Domain groups using your preferred methods (*you can technically do this right from the start with MS01 but I rather you focus on pwning MS01 first before doing any AD related stuff as you may get distracted from the fact that you really need to get MS01 first*). Note any users who may be part of special groups such as Domain Admin, Backup Operators and any users with svc in their names (which could be Service accounts)
 
@@ -50,6 +50,8 @@ evil-winrm -i <MS01 ip> -u <domain user> -p <password>
 # once logged in, you can download and upload files
 PS something@something> download loot.txt # this downloads loot.txt from the host to your kali's current working directory
 PS something@something> upload mimikatz.exe # this uploads your mimikatz.exe from your current working directory. If your mimikatz is somewhere else, you need to provide either the absolute or relative path
+
+whoami /priv  # do this first once you are in! Maybe you get lucky and there is SeImpersonatePrivilege
 ```
 
 2) Do manual enumeration of MS01 first. This means checking out the following folders:
@@ -60,3 +62,20 @@ PS something@something> upload mimikatz.exe # this uploads your mimikatz.exe fro
 If there are anything interesting, check whether you can edit the files or add stuff to these directories. 
 
 You should also do host, user and group enumeration.
+
+```cmd
+net user /domain
+
+# check if any users are admins
+net user <username> /domain
+
+# group Enum
+
+net group /domain
+
+net group <groupname> /domain
+
+# check pass pol
+
+net accounts
+```
