@@ -23,11 +23,11 @@ I placed links below for easier navigation:
 
 1) [Preparing for the Exam](https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/00-Pre-OSCP%20Preparation.MD)
 
-2) [Mindset and Strategy] ()
+2) [Mindset and Strategy](https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/02%20-%20Mindset_Strategy.md)
 
 3) [How to Nmap](https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/01-Nmap.MD)
 
-4) [Service Enumeration and What to do] - Check the relevant services in the Service_Enumeration folder
+4) [Service Enumeration and What to do](https://github.com/OoStellarnightoO/OSCP_Notes/tree/main/03%20-%20Service_Enumeration)
 
 5) [Dealing with Web Services](https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/03%20-%20Service_Enumeration/80_443-HTTP_HTTPS.md)
 
