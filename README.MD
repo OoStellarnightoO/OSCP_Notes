@@ -11,7 +11,43 @@ you are looking at anywhere from a 100 to 300+ hour investment to study for the 
 
 If you have not gotten your PWK course, I strongly suggest getting the **LearnOne One Year Subcription** instead of the three months package.
 
-I had no choice since it was company sponsored and I was lucky to have some background, free time off and a supportive partner to put this much time into OSCP so three months were sufficient.
+I had no choice since it was company sponsored and I was lucky to have some background, free time off and a supportive partner to put this much time into OSCP so three months were sufficient. More details are available below!
+
+## 📚How to use this guide
+
+Everything is in .md so you can just download them or clone them and you can use it in obsidian or notion. Feel free to modify for your own needs!
+
+I will personally start with preparing the environment and then just go down the list.
+
+I placed links below for easier navigation:
+
+1) [Preparing for the Exam](https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/00-Pre-OSCP%20Preparation.MD)
+
+2) [Mindset and Strategy] ()
+
+3) [How to Nmap](https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/01-Nmap.MD)
+
+4) [Service Enumeration and What to do] - Check the relevant services in the Service_Enumeration folder
+
+5) [Dealing with Web Services](https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/03%20-%20Service_Enumeration/80_443-HTTP_HTTPS.md)
+
+6) Pivoting - [Ligolo-NG](https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/05%20-%20Pivoting/Pivoting%20with%20Ligolo-ng.md), [Chisel](https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/05%20-%20Pivoting/Pivoting%20with%20Chisel.md)
+
+7) [Windows Host Enumeration](https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/06-Windows%20Enumeration.md)
+
+8) [Linux Host Enumeration](https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/07-%20Linux%20Enumeration.md)
+
+9) [Windows PrivEsc]
+
+10) [Linux PrivEsc]
+
+11) [Cracking Passwords]
+
+12) [Active Directory Enum, Lateral Movement and PrivEsc]
+
+13) [Other Random Stuff]
+
+----------------
 
 ## Quick Background
 
@@ -141,39 +177,6 @@ IMO, if you fail OSCP, it may not be because you are not prepared, but it may be
 **A:** Different strokes for different people but I love Obsidian because of its community plugins. I sync my notes using Google Cloud (you could pay for Obsidian Sync if you want) and I used the Templater plugin to instantly plant my enumeration template when i note take for a box.
 
 ------------------------------
-## 📚How to use this guide
-
-Everything is in .md so you can just download them or clone them and you can use it in obsidian or notion. Feel free to modify for your own needs!
-
-I will personally start with preparing the environment and then just go down the list.
-
-I placed links below for easier navigation:
-
-1) [Preparing for the Exam] (https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/00-Pre-OSCP%20Preparation.MD)
-
-2) [Mindset and Strategy] ()
-
-3) [How to Nmap] (https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/01-Nmap.MD)
-
-4) [Service Enumeration and What to do] - Check the relevant services in the Service_Enumeration folder
-
-5) [Dealing with Web Services] - (https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/03%20-%20Service_Enumeration/80_443-HTTP_HTTPS.md)
-
-6) [Pivoting] - [Ligolo-NG](https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/05%20-%20Pivoting/Pivoting%20with%20Ligolo-ng.md), Chisel (https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/05%20-%20Pivoting/Pivoting%20with%20Chisel.md)
-
-7) [Windows Host Enumeration](https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/06-Windows%20Enumeration.md)
-
-8) [Linux Host Enumeration](https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/07-%20Linux%20Enumeration.md)
-
-9) [Windows PrivEsc]
-
-10) [Linux PrivEsc]
-
-11) [Cracking Passwords]
-
-12) [Active Directory Enum, Lateral Movement and PrivEsc]
-
-13) [Other Random Stuff]
 
 
 ## Other Awesome Resources!
