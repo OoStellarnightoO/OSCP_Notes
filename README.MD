@@ -37,11 +37,11 @@ I placed links below for easier navigation:
 
 8) [Linux Host Enumeration](https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/07-%20Linux%20Enumeration.md)
 
-9) [Windows PrivEsc]
+9) [Windows PrivEsc]()
 
-10) [Linux PrivEsc]
+10) [Linux PrivEsc]()
 
-11) [Cracking Passwords]
+11) [Cracking Passwords](https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/11-Cracking.md)
 
 12) [Active Directory Enum, Lateral Movement and PrivEsc](https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/12-ActiveDirectory.md)
 
