@@ -32,7 +32,31 @@ The broad strategy is thus as such:
 
 8) Once Admin on MS02, follow step 2.
 
-9) The DC should be straight forward from here. (can't share more info as it would be too specific and may get me flagged by OffSec.)
+9) The DC should be straight forward from here. (can't share more info as it would be too specific and may get me flagged by OffSec.😒)
 
 ## First Steps - Enumeration 
 
+### MS01
+
+1) run a full nmap scan against MS01. See whether 3389 (RDP) or 5985/5986 (WinRM) are open and choose your poison.
+    - using evil-winrm to login allows quick uploading and downloading of tools. However be prepared to use RDP if you need to edit things on the host as a GUI makes things a lot easier.
+    - There will probably be SMB open. Since you have creds, see what folders and documents you can access. However, if you can evil-winrm or RDP in, then you probably not need to do this since you can just access the shares through those.
+
+```bash
+# evil-winrm
+# use -H if NTLM hash
+evil-winrm -i <MS01 ip> -u <domain user> -p <password> 
+
+# once logged in, you can download and upload files
+PS something@something> download loot.txt # this downloads loot.txt from the host to your kali's current working directory
+PS something@something> upload mimikatz.exe # this uploads your mimikatz.exe from your current working directory. If your mimikatz is somewhere else, you need to provide either the absolute or relative path
+```
+
+2) Do manual enumeration of MS01 first. This means checking out the following folders:
+- C:\Users
+- C:\  # check for any non default folders here and investigate them
+- C:\inetpub # if there are web services on MS01
+
+If there are anything interesting, check whether you can edit the files or add stuff to these directories. 
+
+You should also do host, user and group enumeration.
