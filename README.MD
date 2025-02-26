@@ -21,7 +21,7 @@ I will personally start with preparing the environment and then just go down the
 
 I placed links below for easier navigation:
 
-1) [Preparing for the Exam](https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/00-Pre-OSCP%20Preparation.MD)
+1) [Preparing for the Exam](https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/01-Pre-OSCP%20Preparation.MD)
 
 2) [Mindset and Strategy](https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/02%20-%20Mindset_Strategy.md)
 
