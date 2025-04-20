@@ -41,3 +41,4 @@ You can use swaks to send email or use thunderbird for a GUI
 # prep the config.Library-ms and body.txt in advance
 
 sudo swaks -t <target email> --from <legit email> --attach @config.Library-ms --server <target ip> --body @body.txt --header <anything you want> --suppress-data -ap
+```

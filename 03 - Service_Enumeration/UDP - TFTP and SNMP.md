@@ -18,4 +18,13 @@ onesixtyone -c community -i ips
 snmpwalk -v 2c -c public <IP> NET-SNMP-EXTEND-MIB::nsExtendOutputFull
 
 snmpwalk -v 2c -c public <IP> NET-SNMP-EXTEND-MIB::nsExtendObjects
+
+# if the above nsExtend commands do not produce readable output, try running
+sudo apt-get install snmp-mibs-downloader
+```
+
+If you require to brute force the community string, you can also use hydra
+
+```bash
+hydra -P /usr/share/seclists/Discovery/SNMP/common-snmp-community-strings.txt <ip> snmp
 ```

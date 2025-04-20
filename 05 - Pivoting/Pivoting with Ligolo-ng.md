@@ -80,6 +80,11 @@ start
 
 - what the above does is tell the agent MS01 to forward any traffic they receive from port 443 and push it out the other side on port 443. This works bidrectional btw. 
 
+- Ports that are already hosting a service cannot be used (eg. there is a HTTP server up on the target at port 80, which means you cannot bind 0.0.0.0:80).
+  This goes the same for your own services (eg. SMB server on Kali's port 445, which prevents you from binding a listener on 127.0.0.1:445)
+
+*You can add listeners and routes while the session has started, so don't worry if you did not execute this part in order
+
 - with this you can get a reverse shell by getting MS02 to connect to MS01 on port 443 who will then forward the traffic to kali on port 443 so:
 
 ```bash

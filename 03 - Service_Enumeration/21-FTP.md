@@ -46,6 +46,13 @@ passive # this switches off the passive mode
 ls -la  # should work now
 ```
 
+Alternatively, you can run
+``` bash
+ftp <ip> -A
+# login
+ls -la
+```
+
 When downloading or uploading files, remember to run ASCII if uploading/downloading text files and Binary if uploading/downloading any other files such as exe, php, zip, pdf etc or else your file may get corrupted!
 
 ```bash
