@@ -11,7 +11,43 @@ you are looking at anywhere from a 100 to 300+ hour investment to study for the 
 
 If you have not gotten your PWK course, I strongly suggest getting the **LearnOne One Year Subcription** instead of the three months package.
 
-I had no choice since it was company sponsored and I was lucky to have some background, free time off and a supportive partner to put this much time into OSCP so three months were sufficient.
+I had no choice since it was company sponsored and I was lucky to have some background, free time off and a supportive partner to put this much time into OSCP so three months were sufficient. More details are available below!
+
+## 📚How to use this guide
+
+Everything is in .md so you can just download them or clone them and you can use it in obsidian or notion. Feel free to modify for your own needs!
+
+I will personally start with preparing the environment and then just go down the list.
+
+I placed links below for easier navigation:
+
+1) [Preparing for the Exam](https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/01-Pre-OSCP%20Preparation.MD)
+
+2) [Mindset and Strategy](https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/02%20-%20Mindset_Strategy.md)
+
+3) [How to Nmap](https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/01-Nmap.MD)
+
+4) [Service Enumeration and What to do](https://github.com/OoStellarnightoO/OSCP_Notes/tree/main/03%20-%20Service_Enumeration)
+
+5) [Dealing with Web Services](https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/03%20-%20Service_Enumeration/80_443-HTTP_HTTPS.md)
+
+6) Pivoting - [Ligolo-NG](https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/05%20-%20Pivoting/Pivoting%20with%20Ligolo-ng.md), [Chisel](https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/05%20-%20Pivoting/Pivoting%20with%20Chisel.md)
+
+7) [Windows Host Enumeration](https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/06-Windows%20Enumeration.md)
+
+8) [Linux Host Enumeration](https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/07-%20Linux%20Enumeration.md)
+
+9) [Windows PrivEsc]()
+
+10) [Linux PrivEsc]()
+
+11) [Cracking Passwords](https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/11-Cracking.md)
+
+12) [Active Directory Enum, Lateral Movement and PrivEsc](https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/12-ActiveDirectory.md)
+
+13) [Other Random Stuff]
+
+----------------
 
 ## Quick Background
 
@@ -108,7 +144,7 @@ Does the PWK material suck? No! It is actually decent stuff. My problem with it 
 
 3) Why teach SQLMap, Nessus, Metasploit when they are either outright banned or heavily restricted. Come on. And again if you are here for the knowledge, there are way better sources for these stuff (and cheaper). Want to learn SQLi and Web App pentest? BurpSuite Academy has a free course. Want to use Metasploit well, HTB has a fairly comprehensive section on it.
 
-4) They have the gall to create OSCP+ and then not bother updating their modules and challenge labs. Some of the tools taught are already deprecated like crackmapexec, legacy bloodhound. There is no mention of tools such as ligolo-ng, netexec when these has proliferated for at least two to three years and widely used by people taking the test. The materials does not account for the assumed breach scenario. I can accept not updating materials timely if your course is cheap but a course that cost 2k USD and markets itself as THE PENTEST cert? There is really no good excuse.
+4) They have the gall to create OSCP+ and then not bother updating their modules and challenge labs. Some of the tools taught are already deprecated like crackmapexec, legacy bloodhound. There is no mention of tools such as ligolo-ng, netexec when these has proliferated for at least two to three years and widely used by people taking the test. The materials does not account for the assumed breach scenario. I can accept not updating materials timely if your course is cheap but a course that cost 2k USD and markets itself as THE PENTEST cert? There is really no good excuse. **Update Feb 2025** OffSec has FINALLY updated its OSCP A/B/C to an assumed breach scenario but wait for it! The AD boxes are exactly the same only that they give you a valid pair of creds for you to immediately get a foothold. That is incredibly dissapointing but kind of expected to be honest.
 
 5) OffSec discord support and its Student Mentors are wildly inconsistent in terms of reliability. Some Student Mentors are quite nice and provide good advice. Some are literally TryHarder folks. I even see Student Mentors contradicting each other on the intended path for the labs. I see a Student Mentor telling someone who had difficulty setting up ligolo to use chisel instead because ligolo is not taught in the course. Another Student Mentor was more than happy to address ligolo issues. These Student Mentors are paid employees of OffSec and your contact point when you get stuck. So why the inconsistency? For 2k+ USD? This is again not acceptable. 
 
@@ -121,7 +157,7 @@ https://www.youtube.com/watch?v=t-bgRQfeW64
 
 **Q:** What Challenge Labs should I be doing?
 
-**A:** Minimally OSCP A/B/C. If you have the time, do Secura, Relia, Medtech and maybe parts of Skylark. OSCP A/B/C somewhat resembles the actual exam though with the assumed breach scenario, the AD set is not entirely accurate but you get a good sense of the exam. Zeus and Posiedon are generally thought of as out of scope for the exam.
+**A:** Minimally OSCP A/B/C. If you have the time, do Secura, Relia, Medtech and maybe parts of Skylark. OSCP A/B/C somewhat resembles the actual exam though with the assumed breach scenario, the AD set is not entirely accurate but you get a good sense of the exam (they give you creds now). Zeus and Posiedon are generally thought of as out of scope for the exam.
 
 ----------------------------------
 **Q:** How difficult is the exam compared to the challenge labs?
@@ -141,39 +177,6 @@ IMO, if you fail OSCP, it may not be because you are not prepared, but it may be
 **A:** Different strokes for different people but I love Obsidian because of its community plugins. I sync my notes using Google Cloud (you could pay for Obsidian Sync if you want) and I used the Templater plugin to instantly plant my enumeration template when i note take for a box.
 
 ------------------------------
-## 📚How to use this guide
-
-Everything is in .md so you can just download them or clone them and you can use it in obsidian or notion. Feel free to modify for your own needs!
-
-I will personally start with preparing the environment and then just go down the list.
-
-I placed links below for easier navigation:
-
-1) [Preparing for the Exam] (https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/00-Pre-OSCP%20Preparation.MD)
-
-2) [Mindset and Strategy] ()
-
-3) [How to Nmap] (https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/01-Nmap.MD)
-
-4) [Service Enumeration and What to do] - Check the relevant services in the Service_Enumeration folder
-
-5) [Dealing with Web Services] - (https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/03%20-%20Service_Enumeration/80_443-HTTP_HTTPS.md)
-
-6) [Pivoting] - Ligolo-NG (https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/05%20-%20Pivoting/Pivoting%20with%20Ligolo-ng.md), Chisel (https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/05%20-%20Pivoting/Pivoting%20with%20Chisel.md)
-
-7) [Windows Host Enumeration](https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/06-Windows%20Enumeration.md)
-
-8) [Linux Host Enumeration](https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/07-%20Linux%20Enumeration.md)
-
-9) [Windows PrivEsc]
-
-10) [Linux PrivEsc]
-
-11) [Cracking Passwords]
-
-12) [Active Directory Enum, Lateral Movement and PrivEsc]
-
-13) [Other Random Stuff]
 
 
 ## Other Awesome Resources!

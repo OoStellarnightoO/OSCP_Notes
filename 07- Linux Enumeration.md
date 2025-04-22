@@ -151,7 +151,19 @@ cat /etc/crontab
 systemctl status cron
 ```
 
-6) Last thing you should do is to check out /var/www/html if there are web services. What you are looking for are config files that may contain hard-coded credentials. You can use the find command to look for things
+6) Take a look at running processes and look for anything that doesnt look default. If you do more boxes, you will see which are default processes and which are not:
+
+```bash
+ps auxww
+```
+
+You also want to check for any locally hosted services
+```bash
+ss -antp
+netstat -antp
+```
+
+7) Last thing you should do is to check out /var/www/html if there are web services. What you are looking for are config files that may contain hard-coded credentials. You can use the find command to look for things
 
 ```bash
 find / -name *.conf, *.yml -type f 2>/dev/null
@@ -164,7 +176,7 @@ grep -Horn <text> <dir>
 https://idafchev.github.io/enumeration/2018/03/05/linux_proc_enum.html
 
 ```bash
-# if you have Remote File Read (but cant get a shell you can use the following method)
+# if you have Remote File Read (but cant get a shell) you can try to read the following files:
 
 /proc/self/cmdline
 
