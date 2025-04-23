@@ -6,7 +6,7 @@ First of all, OSCP is an exam and it is important to treat it like any other exa
 
 That means understanding the exam format and the environment. I see OSCP more like a puzzle game or more accurately a CTF. There are rabbit holes and there are intended paths. If something looks suspicious, it is (probably) suspicious and is the intended path. 
 
-How do you know it is a rabbit hole? Well you cant really say 100% for sure but if you tried everything you know of and it doesnt work for like three times and after reverting the machine, it sitll doesnt work? it is probably a rabbit hole. 
+How do you know it is a rabbit hole? Well you cant really say 100% for sure but if you tried everything you know of and it doesn't work for like three times and after reverting the machine, it still doesn't work? it is probably a rabbit hole. 
 
 How do you prepare for CTFs or puzzle games? By doing more CTFs (i.e. Challenge Labs and PG Boxes) and understanding how a puzzle is designed (by offsec).
 
@@ -20,7 +20,7 @@ You need to also keep in mind that your end goal is to **PASS** the exam. While 
 
 (3) you spent 2k USD to get the certification so focus on that. If you want to learn, there are better ways of spending that 2k USD such as on HTB's CPTS or Zero Point Security's CRTO. 
 
-Now I cannot guarentee you will pass the exam with my notes because of the RNG nature of the exam, your physical and mental state on the exam day, the "stability" of the exam environment and your own preparation. So treat my set of notes as yet another datapoint to increase your chance of passing.
+Now I cannot guarantee you will pass the exam with my notes because of the RNG nature of the exam, your physical and mental state on the exam day, the "stability" of the exam environment and your own preparation. So treat my set of notes as yet another datapoint to increase your chance of passing.
 
 Some videos and articles that I found to be actually useful: 
 
@@ -36,14 +36,28 @@ https://www.youtube.com/watch?v=pIdbPp6vNmE - I was initially unsure when I saw 
 
 I am not going to talk about tools or commands here. Rather I want to talk about broad concepts on how to approach a box in general. 
 
-When you dont have a (OSCP-ish) methodology or dont questionwhat a tool is supposed to achieve, that is how you fail the OSCP. The course does not cover every scenario and tools that you will need to pass the exam (whether this is fair or not is another matter all together). Try to have different ways of achieving the same goals. Have an admin shell but cant get its password or hash? Use your admin powers to create a new admin user and then dump hashes via nxc if mimikatz has issues.
+When you don't have a (OSCP-ish) methodology or don't question what a tool is supposed to achieve, that is how you fail the OSCP. The course does not cover every scenario and tools that you will need to pass the exam (whether this is fair or not is another matter all together). Try to have different ways of achieving the same goals. Have an admin shell but cant get its password or hash? Use your admin powers to create a new admin user and then dump hashes via nxc if mimikatz has issues.
 
-To maximise your chance of passing and to not just rely on the ambigious advice of "TRY HARDER", think of the approach to a box in this manner:
+To maximize your chance of passing and to not just rely on the ambiguous advice of "TRY HARDER", think of the approach to a box in this manner:
 
 **Objective**: Get Administrator/Administrator-level/root access on the box
 
 < W I P>
 
+If you have not achieved so already, obtain a foothold on the machine, this can be looking for credentials in configuration files, insecure services, RCE, path traversal, exploits etc.
+
+Assuming that you have already gotten into the system, if you have an unstable or limited shell, try to upgrade it to enable more functionality and readability within the session with Python.
+
+**On Windows :**
+Manual enumeration should ideally target easy to exploit and find vulnerabilities such as `whoami /priv` which tells you straight away whether Spoofer or Potato exploits can elevate your permissions into a SYSTEM user. 
+Unquoted spaces can also be a potential privilege escalation vector that is simple enough to check and abuse.
+
+Always check the User directories for traces of important files. The `C:\` drive can sometimes provide information about available services or hints that can be inferred to point towards the intended path.
+
+**On Linux :**
+Crontabs usually generate less output compared to Window's task scheduler which can also be an easy vector to privilege escalate. 
+If your user has sudo permissions, you can check them with `sudo -l`. Looking for SUID permissions on binaries also fall into this category where if you have permissions to run certain binaries with sudo permissions, you can refer to GTFObins to aid you with the commands required to privilege escalate.
+Other simple to exploit vectors include checking for capabilities as well as writable files/directories (adding a root level user on /etc/passwd would be super simple to do)
 
 
 

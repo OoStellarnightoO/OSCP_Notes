@@ -25,4 +25,5 @@ proxychains nmap -sT -n -p- <target ip>
 
 # foxyproxy is a firefox extension that you can download from its extension page
 
+# if you want to be OG, you can use the in-built proxy setting that comes built-in with firefox
 ```
