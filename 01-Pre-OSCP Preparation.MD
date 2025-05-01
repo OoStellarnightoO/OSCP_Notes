@@ -348,6 +348,8 @@ Grab PrintSpoofer32 and PrintSpoofer64 from https://github.com/itm4n/PrintSpoofe
 
 Grab SigmaPotatoCore and SigmaPotato from https://github.com/tylerdotrar/SigmaPotato/releases/tag/v1.2.6
 
+Grab GodPotato from https://github.com/BeichenDream/GodPotato
+
 -------------
 
 # Great Work!

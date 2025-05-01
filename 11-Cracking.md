@@ -39,3 +39,9 @@ keepass2john Database.kdbx > keepass.hash
 
 hashcat -m 13400 keepass.hash rockyou.txt
 ```
+
+## Cracking SAM and SYSTEM hives
+
+```bash
+impacket-secretsdump -system SYSTEM -sam SAM local
+```

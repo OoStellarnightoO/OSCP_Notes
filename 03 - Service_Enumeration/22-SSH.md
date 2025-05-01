@@ -12,6 +12,8 @@ nxc ssh <target ip> -u users.txt -p password.txt
 hydra -L users.txt -P password.txt ssh://<target ip>
 ```
 
+If netexec fails to run (which happens sometimes on certain services) you can always fall back to crackmapexec, which follows the same syntax as netexec (nxc.)
+
 If you can somehow write or upload files into the /home/username/.ssh directory, you can create your own ssh keys and then enter via your own keys!
 
 ```bash
