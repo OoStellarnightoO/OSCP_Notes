@@ -10,7 +10,7 @@ Here is what I use (with explanations):
 # -A tells nmap to run  OS detection, version detection, script scanning, and traceroute
 # -Pn tells nmap to skip host discovery which is done through ICMP. In OSCP, you know the host is up at the target IP. If it is a windows box, nmap may fail if this flag is not provided because Windows block ICMP by default thereby making nmap think the host is down. So always use -Pn for OSCP
 # -v for verbose. I just like to see the results live so that I can start enumerating even when the nmap scan is ongoing
-# --open tells nmap to only run the version detection, script enumeration against ports that are open. This is so that nmap doesnt take forever to scan as it will run -A against every port without this flag!
+# --open. According to Documentation, this just gets NMAP to only output the open ports. According to S1ren, this allegedly speeds up scans as it only runs the scripts against open ports. I did some personal testing and it is not entirely conclusive whether it speeds up scans but no harm putting this in
 
 sudo nmap -p- -A -Pn -v --open <target ip> -oN <output file>
 
